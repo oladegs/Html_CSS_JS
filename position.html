@@ -1,0 +1,111 @@
+<!--
+  Position helps us to keep things like position at the edge of the page whilst we scroll , also seeing an element on top of another element is CSS Position 
+
+  position : static is the default position , is the same has not having the line at all. The element stretches when we use two opposite like right and left ( you can make a box real quixk)
+
+  if you want the fixed position element to resize with the page , we would use top, left , right and bottom . If you dont want it to resize , you would use height and width 
+
+  Position Fixed : Placed in the browser window 
+  Position Absolute : Placed on the page 
+
+  Elements written below is going to appear above element written above 
+
+  z-index : It determines which elements appears in front and which one appears behind it , an element with a higher index would appear in front of an element with a lower index 
+
+  Position Relative displays relatively based on the element as to the page ie when we put position Absolute 
+
+  Position static always appear at the back 
+
+  Use negative numbers to go beyond the edge of the containers
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Position Practice</title>
+
+    <style>
+      body {
+        height: 3000px;
+        padding-top: 60px;
+        padding-left: 80px;
+      }
+
+      .header {
+        background-color: black;
+        color: white;
+        position: fixed;
+        top: 0px;
+        left: 0;
+        right: 0;
+        height: 50px;
+        z-index: 100;
+      }
+
+      .sidebar {
+        background-color: green;
+        color: white;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        top: 50px;
+        width: 72px;
+      }
+
+      .x {
+        position: absolute;
+        background-color: red;
+        color: white;
+        right: 0px;
+        top: 0px;
+        z-index: 0;
+      }
+
+      .absolute {
+        position: absolute;
+        background-color: red;
+        color: white;
+        right: 10px;
+        top: 60px;
+        z-index: 0;
+      }
+
+      .time-absolute {
+        position: absolute;
+        background-color: black;
+        color: white;
+        right: 10px;
+        bottom: 10px;
+        z-index: 0;
+      }
+
+      .div1 {
+        background-color: lightblue;
+        height: 200px;
+        width: 200px;
+        position: static;
+      }
+
+      .div2 {
+        background-color: lightpink;
+        height: 200px;
+        width: 200px;
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">Header</div>
+    <div class="sidebar">
+      Sidebar
+      <div class="x">X</div>
+    </div>
+    <div class="absolute">Absolute</div>
+    <div class="div1">div 1</div>
+    <div class="div2">
+      div 2
+      <div class="time-absolute">14:50</div>
+    </div>
+  </body>
+</html>

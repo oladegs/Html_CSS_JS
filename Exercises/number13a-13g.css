@@ -1,0 +1,47 @@
+.thirteen-a {
+  display: flex;
+  margin-bottom: 10px;
+  flex-direction: row;
+  height: 50px;
+}
+
+.hundred {
+  display: flex;
+  flex-direction: row;
+  width: 100px;
+  justify-content: center;
+  align-items: center;
+  background-color: lightpink;
+}
+
+.item-one {
+  background-color: black;
+  color: white;
+}
+
+.twohundred {
+  width: 200px;
+  background-color: lightblue;
+}
+
+.thirteen-b {
+  display: flex;
+}
+
+.row-one {
+  color: black;
+  font-size: 23px;
+}
+
+.row-twos {
+  display: flex;
+  justify-content: space-between;
+}
+
+.row-two {
+  width: 50px;
+  height: 25px;
+  background-color: black;
+  color: white;
+  font-size: 23px;
+}

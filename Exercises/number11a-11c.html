@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>11a-11c</title>
+
+    <style>
+      .first-grid {
+        display: grid;
+        grid-template-columns: 200px 75px;
+        margin-bottom: 30px;
+      }
+
+      .second-grid {
+        display: grid;
+        grid-template-columns: 50px 1fr 75px;
+        margin-bottom: 30px;
+      }
+
+      .third-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        margin-bottom: 30px;
+        column-gap: 20px;
+        row-gap: 10px;
+      }
+
+      .div1 {
+        background-color: lightblue;
+      }
+      .div2 {
+        background-color: lightpink;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="first-grid">
+      <div class="div1">200px</div>
+      <div class="div2">75px</div>
+    </div>
+
+    <div class="second-grid">
+      <div class="div1">col1</div>
+      <div class="div2">col2</div>
+      <div class="div1">col3</div>
+    </div>
+
+    <div class="third-grid">
+      <div class="div2">col1</div>
+      <div class="div2">col2</div>
+      <div class="div2">col3</div>
+      <div class="div2">col4</div>
+      <div class="div2">col1</div>
+      <div class="div2">col2</div>
+      <div class="div2">col3</div>
+      <div class="div2">col4</div>
+    </div>
+  </body>
+</html>

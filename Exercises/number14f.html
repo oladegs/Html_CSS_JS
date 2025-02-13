@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>14f</title>
+
+    <style>
+      body {
+        height: 3000px;
+      }
+
+      .horizontal-flexxx {
+        display: flex;
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+      }
+
+      div {
+        font-family: Arial;
+      }
+
+      .black {
+        width: 75px;
+        background-color: rgb(27, 27, 27);
+      }
+
+      .profile-picture {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        border-radius: 25px;
+        margin-top: 15px;
+        margin-left: 10px;
+      }
+
+      .grey {
+        position: fixed;
+        left: 75px;
+        top: 0;
+        bottom: 0;
+        width: 150px;
+        background-color: rgb(63, 61, 61);
+        padding-top: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      .white {
+        flex: 1;
+        background-color: white;
+      }
+
+      .info-plus {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .info {
+        color: white;
+        font-size: 14px;
+      }
+
+      .plus {
+        color: rgb(150, 150, 150);
+        font-size: 25px;
+      }
+
+      .details {
+        color: rgb(150, 150, 150);
+        margin-bottom: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="horizontal-flexxx">
+      <div class="black">
+        <img class="profile-picture" src="../thumbnails/cattt.jpg" />
+        <img class="profile-picture" src="../thumbnails/dog.jpg" />
+        <img class="profile-picture" src="../thumbnails/lion.webp" />
+      </div>
+      <div class="grey">
+        <div class="info-plus">
+          <div class="info">INFO</div>
+          <div class="plus">+</div>
+        </div>
+
+          <div class="details"># new-videos</div>
+          <div class="details"># updates</div>
+          <div class="details"># faq</div>
+        </div>
+      </div>
+      <div class="white"></div>
+    </div>
+  </body>
+</html>
+  

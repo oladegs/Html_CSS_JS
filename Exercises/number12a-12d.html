@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      p {
+        font-family: Arial;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      .flexone {
+        display: flex;
+        margin-bottom: 20px;
+      }
+
+      .flextwo {
+        display: flex;
+        margin-bottom: 20px;
+        justify-content: space-between;
+      }
+
+      .flexthree {
+        display: flex;
+        flex-direction: row;
+        height: 50px;
+        margin-bottom: 20px;
+        justify-content: space-between;
+        align-items: center;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(150, 150, 150);
+      }
+
+      .flexfour {
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(200, 200, 200);
+        width: 300px;
+        border-radius: 6px;
+        margin-bottom: 30px;
+      }
+
+      .flexfive {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-width: 1px;
+        background-color: rgb(120, 82, 178);
+        color: white;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-bottom: 20px;
+      }
+
+      .homeee {
+        font-weight: bold;
+      }
+
+      .search {
+        width: 500px;
+        border: none;
+        margin-top: 12px;
+        margin-bottom: 12px;
+        height: 30px;
+        border-radius: 15px;
+        padding-left: 20px;
+      }
+
+      .dload {
+        background-color: rgb(120, 82, 178);
+        color: white;
+        font-size: 16px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: white;
+        border-radius: 2px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      .twohundred {
+        width: 200px;
+        background-color: lightblue;
+      }
+
+      .seventyfive {
+        width: 75px;
+        background-color: lightpink;
+      }
+
+      .item1 {
+        width: 50px;
+        background-color: lightblue;
+      }
+
+      .item2 {
+        flex: 1;
+        background-color: lightpink;
+      }
+
+      .item3 {
+        width: 75px;
+        background-color: lightblue;
+      }
+
+      .item11 {
+        background-color: lightpink;
+      }
+
+      .item22 {
+        background-color: lightpink;
+      }
+
+      .item33 {
+        background-color: lightpink;
+      }
+
+      .item44 {
+        background-color: lightpink;
+      }
+
+      .div7 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .div8 {
+        background-color: lightblue;
+        margin-bottom: 20px;
+      }
+
+      .div9 {
+        background-color: lightblue;
+      }
+
+      .first-flex {
+        display: flex;
+        flex: 1;
+        align-items: center;
+        margin-left: 5px;
+        margin-bottom: 10px;
+      }
+
+      .image-flex {
+        margin-right: 12px;
+      }
+
+      .picture {
+        height: 50px;
+        width: 50px;
+        object-fit: cover;
+        border-radius: 25px;
+        margin-right: 15px;
+      }
+
+      .second-flex {
+        display: flex;
+        width: 200px;
+        align-items: center;
+        margin-left: 8px;
+        margin-bottom: 10px;
+      }
+
+      .name {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 6px;
+      }
+
+      .description {
+        font-size: 18px;
+        color: rgb(150, 150, 150);
+        margin-bottom: 3px;
+      }
+
+      .popular {
+        color: rgb(100, 100, 100);
+      }
+
+      .follow {
+        background-color: rgb(24, 119, 242);
+        color: rgb(255, 255, 255);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 15px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-left: 8px;
+        margin-bottom: 10px;
+        transition: box-shadow 0.15s; /*property , time*/
+      }
+
+      /* We are going to get all the features plus the pseudo class - hover feature  */
+      .follow:hover {
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .homeflex {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 20px;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+
+      .numbers {
+        background-color: rgb(49, 109, 245);
+        color: white;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flexone">
+      <div class="twohundred">200px</div>
+      <div class="seventyfive">75px</div>
+    </div>
+
+    <div class="flexone">
+      <div class="item1">item1</div>
+      <div class="item2">item2</div>
+      <div class="item3">item3</div>
+    </div>
+
+    <div class="flextwo">
+      <div class="item11">item1</div>
+      <div class="item22">item2</div>
+      <div class="item33">item3</div>
+      <div class="item44">item4</div>
+    </div>
+
+    <div class="flexthree">
+      <div class="item11">item1</div>
+      <div class="item22">item2</div>
+    </div>
+
+    <div class="flexfour">
+      <div class="homeflex">
+        <div class="home">Home</div>
+        <div class="numbers">14</div>
+      </div>
+
+      <div class="homeflex">
+        <div class="home">Notifications</div>
+        <div class="numbers">3</div>
+      </div>
+
+      <div class="homeflex">
+        <div class="home">Messages</div>
+        <div class="numbers">5</div>
+      </div>
+    </div>
+
+    <div class="flexfive">
+      <div class="homeee">Home</div>
+
+      <input class="search" placeholder="Search" />
+
+      <div class="dload">Download</div>
+    </div>
+
+    <div class="div7">
+      <!-- 1st div    -->
+      <div class="first-flex">
+        <div class="image-flex">
+          <img class="picture" src="../thumbnails/cattt.jpg" />
+        </div>
+        <div class="desc-flex">
+          <p class="name">Oliver</p>
+          <p class="description">the cat</p>
+          <p class="popular">Popular</p>
+        </div>
+      </div>
+
+      <!-- 2nd div    -->
+      <div class="second-flex">
+        <button class="follow">Follow</button>
+      </div>
+    </div>
+
+    <div class="div7">
+      <!-- 1st div    -->
+      <div class="first-flex">
+        <div class="image-flex">
+          <img class="picture" src="../thumbnails/lion.webp" />
+        </div>
+        <div class="desc-flex">
+          <p class="name">Mimi</p>
+          <p class="description">Sleepy Cat</p>
+          <p class="popular">Popular</p>
+        </div>
+      </div>
+
+      <!-- 2nd div    -->
+      <div class="second-flex">
+        <button class="follow">Follow</button>
+      </div>
+    </div>
+
+    <div class="div7">
+      <!-- 1st div    -->
+      <div class="first-flex">
+        <div class="image-flex">
+          <img class="picture" src="../channel-pic/dog2.jpg" />
+        </div>
+
+        <div class="desc-flex">
+          <p class="name">Rex</p>
+          <p class="description">Happy Bulldog</p>
+          <p class="popular">Popular</p>
+        </div>
+      </div>
+
+      <!-- 2nd div    -->
+      <div class="second-flex">
+        <button class="follow">Follow</button>
+      </div>
+    </div>
+  </body>
+</html>

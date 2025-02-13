@@ -1,0 +1,79 @@
+input {
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(200, 200, 200);
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 16px;
+  padding-right: 16px;
+  font-size: 16px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.fname-bar,
+.lname-bar {
+  width: 148px;
+}
+
+.email-bar {
+  display: block;
+  width: 300px;
+}
+
+.sign-button {
+  background-color: rgb(47, 127, 231);
+  color: white;
+  border: none;
+  width: 300px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.ride {
+  font-size: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 25px;
+}
+
+.pickup-bar,
+.destination-bar {
+  display: block;
+  margin-bottom: 15px;
+  width: 400px;
+  border: none;
+  font-size: 16px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.destination-bar {
+  margin-bottom: 35px;
+}
+
+.req-button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
+  font-size: 16px;
+  margin-right: 20px;
+}
+
+.schedule-button {
+  background-color: rgb(240, 240, 240);
+  border: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
+  font-size: 16px;
+}

@@ -1,0 +1,144 @@
+<!-- Flex box is more flexible and Grid is more rigid,
+ if we make one div taller , it is still going to be vrtically aligned with other divs and maintain alignment -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Box Practice</title>
+  </head>
+  <style>
+    .flexboxx1 {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 20px;
+    }
+
+    .flexboxx2 {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 20px;
+    }
+
+    .flexboxx3 {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 20px;
+    }
+
+    .flexboxx4 {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 20px;
+      height: 70px;
+      border-width: 1px;
+      border-style: solid;
+      border-color: gray;
+      justify-content: center;
+    }
+
+    .flexboxx5 {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 20px;
+      height: 70px;
+      border-width: 1px;
+      border-style: solid;
+      border-color: gray;
+      justify-content: space-between;
+    }
+
+    .flexboxx6 {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 20px;
+      height: 70px;
+      border-width: 1px;
+      border-style: solid;
+      border-color: gray;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .body {
+      padding-bottom: 1500px;
+    }
+    .div1 {
+      background-color: lightblue;
+      width: 100px;
+    }
+
+    .div2 {
+      background-color: lightpink;
+      flex: 1;
+    }
+
+    .div3 {
+      background-color: lightblue;
+      flex: 2;
+    }
+
+    .div4 {
+      background-color: lightblue;
+      flex: 1;
+    }
+
+    .div5 {
+      background-color: lightpink;
+      width: 100px;
+    }
+
+    .div6 {
+      background-color: lightblue;
+      width: 100px;
+    }
+
+    .div7 {
+      background-color: lightblue;
+      width: 100px;
+    }
+
+    .div8 {
+      background-color: lightpink;
+      width: 100px;
+    }
+  </style>
+  <body>
+    <div class="flexboxx1">
+      <div class="div1">div 1 text</div>
+      <div class="div2">
+        div 2
+        <p>texttt</p>
+      </div>
+    </div>
+
+    <div class="flexboxx2">
+      <div class="div1">100px</div>
+      <div class="div2">flex : 1</div>
+    </div>
+
+    <div class="flexboxx3">
+      <div class="div4">flex : 1</div>
+      <div class="div5">100px</div>
+      <div class="div3">flex : 2</div>
+    </div>
+
+    <div class="flexboxx4">
+      <div class="div7">100pxx</div>
+      <div class="div8">100pxx</div>
+      <div class="div6">100pxx</div>
+    </div>
+
+    <div class="flexboxx5">
+      <div class="div7">100px</div>
+      <div class="div8">100px</div>
+      <div class="div6">100px</div>
+    </div>
+
+    <div class="flexboxx6">
+      <div class="div7">100px</div>
+      <div class="div8">100px</div>
+      <div class="div6">100px</div>
+    </div>
+  </body>
+</html>

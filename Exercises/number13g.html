@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>number13g</title>
+
+    <style>
+      div {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .horiz-flex {
+        display: flex;
+        flex-direction: row;
+        width: 400px;
+        margin-top: 10px;
+        margin-left: 20px;
+      }
+
+      .image-flex-column {
+        margin-right: 10px;
+      }
+
+      .picture {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        border-radius: 25px;
+      }
+
+      .details-flex-column {
+        flex: 1;
+      }
+
+      .name {
+        font-weight: bold;
+        margin-bottom: 2px;
+      }
+
+      .mention {
+        font-weight: 200;
+        margin-left: 1px;
+        color: rgb(134, 133, 133);
+      }
+
+      .what {
+        font-weight: 200;
+        font-size: 15px;
+        margin-bottom: 8px;
+      }
+
+      .inner-flex {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(200, 200, 200);
+        border-radius: 15px;
+        overflow: hidden;
+      }
+
+      .grey {
+        width: 100px;
+        height: 100px;
+        background-color: rgb(220, 220, 220);
+        margin-right: 10px;
+      }
+
+      .sometexts {
+        flex: 1;
+      }
+
+      .com {
+        color: rgb(111, 111, 111);
+        margin-bottom: 3px;
+      }
+
+      .backend {
+        line-height: 22px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="horiz-flex">
+      <div class="image-flex-column">
+        <img class="picture" src="../thumbnails/cattt.jpg" />
+      </div>
+
+      <div class="details-flex-column">
+        <div class="name">
+          supersimple.dev <span class="mention">@SuperSimpleDev</span>
+        </div>
+        <div class="what">
+          What is backend web development? A complete overview. New video is up!
+        </div>
+
+        <div class="inner-flex">
+          <div class="grey"></div>
+          <div class="sometexts">
+            <div class="com">youtube.com</div>
+            <div class="backend">
+              Backend web development - a complete overview (2021)
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

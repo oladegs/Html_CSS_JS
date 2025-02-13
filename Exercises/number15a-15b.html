@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise15a-15b</title>
+
+    <style>
+      body {
+        background-color: black;
+        height: 3000px;
+      }
+
+      .first-box {
+        background-color: white;
+        position: relative;
+        width: 300px;
+        height: 75px;
+        top: 0;
+        left: 0;
+        margin-bottom: 15px;
+      }
+
+      .inner-first-box {
+        position: absolute;
+        top: 10px;
+        right: 5px;
+        background-color: black;
+        color: white;
+        font-size: 11px;
+        font-family: Roboto, Arial;
+        padding-left: 7px;
+        padding-right: 7px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .second-box {
+        background-color: white;
+        position: fixed;
+        top: 85px;
+        width: 500px;
+        height: 200px;
+        bottom: 0px;
+        right: 0px;
+        margin-bottom: 15px;
+      }
+
+      .inner-second-box {
+        position: absolute;
+        bottom: 8px;
+        right: 8px;
+        background-color: grey;
+        width: 320px;
+        height: 180px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="first-box">
+      <div class="inner-first-box">X</div>
+    </div>
+
+    <div class="second-box">
+      <div class="inner-second-box"></div>
+    </div>
+  </body>
+</html>

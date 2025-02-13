@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>number 13d</title>
+    <style>
+      p {
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      .inboxes {
+        color: rgb(95, 95, 95);
+        margin-bottom: 20px;
+        font-size: 13px;
+      }
+
+      .first-box {
+        display: flex;
+        flex-direction: row;
+        width: 400px;
+        margin-bottom: 20px;
+      }
+
+      .second-box {
+        display: flex;
+        flex-direction: row;
+        width: 400px;
+        margin-bottom: 20px;
+      }
+
+      .third-box {
+        display: flex;
+        flex-direction: row;
+        width: 400px;
+      }
+
+      .image-flex {
+        width: 50px;
+        margin-right: 10px;
+      }
+
+      .picture {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        border-radius: 25px;
+      }
+
+      .details-flex {
+        flex: 1;
+      }
+
+      .chewy-time {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .chewy,
+      .sales {
+        font-weight: bold;
+        font-size: 14px;
+        margin-bottom: 3px;
+      }
+
+      .time,
+      .writing {
+        color: rgb(95, 95, 95);
+        font-size: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- First One -->
+    <p class="inboxes">ALL INBOXES</p>
+
+    <div class="first-box">
+      <div class="image-flex">
+        <img class="picture" src="../thumbnails/cattt.jpg" />
+      </div>
+
+      <div class="details-flex">
+        <div class="chewy-time">
+          <p class="chewy">Chewy Promotions</p>
+          <p class="time">4:58 PM</p>
+        </div>
+        <p class="sales">Biggest sales of the year!</p>
+        <p class="writing">Hey there! We're writing to tell you about our...</p>
+      </div>
+    </div>
+
+    <!-- Second One -->
+    <div class="second-box">
+      <div class="image-flex">
+        <img class="picture" src="../thumbnails/dog.jpg" />
+      </div>
+
+      <div class="details-flex">
+        <div class="chewy-time">
+          <p class="chewy">Best Buy</p>
+          <p class="time">12:32 PM</p>
+        </div>
+        <p class="sales">Your Best Buy eReceipt</p>
+        <p class="writing">Thank you for shopping at Best Buy here is...</p>
+      </div>
+    </div>
+
+    <!-- Third One -->
+    <div class="third-box">
+      <div class="image-flex">
+        <img class="picture" src="../thumbnails/cat2.jpg" />
+      </div>
+
+      <div class="details-flex">
+        <div class="chewy-time">
+          <p class="chewy">Netflix</p>
+          <p class="time">9:00 AM</p>
+        </div>
+        <p class="sales">Here's what's coming soon to Netflix</p>
+        <p class="writing">Brand new movies and shows, old favorites...</p>
+      </div>
+    </div>
+  </body>
+</html>
