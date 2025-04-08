@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex 11g-11n</title>
+  </head>
+  <body>
+    <script>
+      const nums = [1, 2, 3];
+      let numsByOne = [];
+      for (i = 0; i < nums.length; i++) {
+        let byOne = nums[i];
+        numsByOne.push(byOne + 1);
+      }
+      // console.log(numsByOne);
+
+      function addOne(array) {
+        const nums = array;
+        let numsByOne = [];
+        for (i = 0; i < nums.length; i++) {
+          let byOne = nums[i];
+          numsByOne.push(byOne + 1);
+        }
+        return numsByOne;
+      }
+      console.log(addOne([1, 2, 3]));
+      console.log(addOne([-2, -1, 0, 99]));
+
+      function addNum(array, num) {
+        const nums = array;
+        let numsByOne = [];
+        for (i = 0; i < nums.length; i++) {
+          let byOne = nums[i];
+          numsByOne.push(byOne + num);
+        }
+        return numsByOne;
+      }
+      console.log(addNum([1, 2, 3], 2));
+      console.log(addNum([1, 2, 3], 3));
+      console.log(addNum([-2, -1, 0, 99], 2));
+
+      function addArrays(array1, array2) {
+        let numsArray = [];
+
+        for (let i = 0; i < array1.length; i++) {
+          numsArray.push(array1[i] + array2[i]);
+        }
+        return numsArray;
+      }
+      console.log(addArrays([1, 1, 2], [1, 1, 3]));
+      console.log(addArrays([1, 2, 3], [4, 5, 6]));
+
+      function countPositive(nums) {
+        const numsArray = [];
+        for (i = 0; i < nums.length; i++) {
+          const number = nums[i];
+          if (number > 0) {
+            numsArray.push(number);
+          }
+        }
+        return numsArray.length;
+      }
+      console.log(countPositive([1, -3, 5]));
+      console.log(countPositive([-2, 3, -5, 7, 10]));
+
+      function minMax(nums) {
+        // We'll set the starting values of min and max
+        // as the first value in the array. (This is
+        // just one way to set the starting values. You
+        // can use another way if you like.)
+        const result = {
+          min: nums[0],
+          max: nums[0],
+        };
+
+        for (let i = 0; i < nums.length; i++) {
+          const value = nums[i];
+
+          // If the value is less than the min,
+          // update the min.
+          if (value < result.min) {
+            result.min = value;
+          }
+
+          // If the value is greater than the max,
+          // update the max.
+          if (value > result.max) {
+            result.max = value;
+          }
+        }
+        return result;
+      }
+      console.log(minMax([1, -3, 5]));
+      console.log(minMax([-2, 3, -5, 7, 10]));
+
+      function minMaxx(nums) {
+        // We'll set the starting values of min and max
+        // to null this time.
+        const result = {
+          min: null,
+          max: null,
+        };
+
+        for (let i = 0; i < nums.length; i++) {
+          const value = nums[i];
+
+          // If the min is null OR the value is
+          // less than the min, update the min.
+          if (result.min === null || value < result.min) {
+            result.min = value;
+          }
+
+          // If the max is null OR the value is
+          // greater than the max, update the max.
+          if (result.max === null || value > result.max) {
+            result.max = value;
+          }
+
+          // We have to use 2 if-statements above instead of
+          // an if-else statement. This makes sure both the
+          // min and max are set if they are null.
+        }
+
+        return result;
+      }
+      console.log(minMaxx([1, -3, 5]));
+      console.log(minMaxx([-2, 3, -5, 7, 10]));
+      console.log(minMaxx([]));
+      console.log(minMaxx([3]));
+
+      function countWords(words) {
+        const result = {};
+        for (let i = 0; i < words.length; i++) {
+          const word = words[i];
+
+          // result[word] adds/accesses a property using whatever is
+          // saved inside the 'word' variable.
+          // If word = 'apple', result[word] will do result['apple']
+          // If word = 'grape', result[word] will do result['grape']
+          //result["apple"] = 1; is same as result.apple = 1;
+          // .push() is for adding to arrays
+          // object[key] = value is for creating or updating key-value pairs in objects
+
+          if (!result[word]) {
+            result[word] = 1;
+          } else {
+            result[word]++;
+          }
+        }
+        return result;
+      }
+
+      console.log(countWords(["apple", "grape", "apple", "apple"]));
+    </script>
+  </body>
+</html>

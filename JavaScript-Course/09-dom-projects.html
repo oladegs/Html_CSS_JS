@@ -1,0 +1,159 @@
+<!--
+Process for JS : Figure out what steps we need(algorithm), convert these steps into code 
+Algorithms : Steps we need :
+- When we click the button , If the text is "Subscribe" => "Subscribed"
+- Otherwise, change it back => "Subscribe"
+
+Why Use Backticks?
+Backticks (``) allow for easier string interpolation (inserting variables into strings) using ${}, making the code cleaner and more readable.
+
+Always use functions so you can repeat it as many times as possible
+
+Every html element has an element called: .classList >> gives us control of the class attribute
+
+One Solution: When we click the button,
+1) Add a class
+2) This class will have different styles 
+
+Typing a dot only makes sense in query selector 
+Space on the inside of an element is called padding and the outside is called margin
+
+<img> doesn't require a closing tag (void element)
+src ~ source : Tells the computer which file to load 
+Use fake img & text if you need to style an invisible 
+
+<link> - void element ::: 
+rel - relation: tells the computer what type of file we are loading. 
+href - filepath - which specific file we are loading
+
+classList allows us to control the class attribute of an element
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Projects</title>
+
+    <style>
+      body {
+        font-family: Arial;
+      }
+
+      .subscribe-button {
+        border: none;
+        background-color: black;
+        color: white;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-weight: bold;
+        border-radius: 50px;
+        cursor: pointer;
+        margin-bottom: 30px;
+      }
+
+      .is-subscribed {
+        background-color: rgb(240, 240, 240);
+        color: black;
+      }
+
+      .cost-input {
+        font-size: 15px;
+        padding: 10px;
+      }
+
+      .js-calculate-button {
+        background-color: green;
+        color: white;
+        border: none;
+        font-size: 15px;
+        padding: 12px 15px; /* T-B , L-R */
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- since the class is already used by js , good practise is to use another class that would be used by CSS  -->
+    <p>YouTube Subscribe Button</p>
+    <button
+      class="js-subscribe-button subscribe-button"
+      onclick="
+  subscribe();
+  "
+    >
+      Subscribe
+    </button>
+
+    <!--
+    Figure out what steps we need , convert those steps into code 
+
+    When we click the button:
+    1) Get the text in the text box
+    2) If amount <40 , add 10 
+    3) Display total on the page
+
+    When we press a key: 
+    1) Check if the key is "Enter"
+    2) If it is, do the same thing as the calculate button
+    -->
+    <p>Amazon Shipping Calculator</p>
+    <input
+      class="js-input-button cost-input"
+      placeholder="Cost of order"
+      onkeydown="
+      handleCostKeydown(event);
+      "
+    />
+    <button
+      class="js-calculate-button"
+      onclick="
+     calculateTotal();
+      "
+    >
+      Calculate
+    </button>
+
+    <p class="js-order-cost"></p>
+
+    <script>
+      String(25);
+      console.log("25" - 5);
+      console.log("25" + 5);
+
+      window.document;
+      window.console.log("yessirrr");
+
+      function handleCostKeydown(event) {
+        console.log(event.key);
+        if (event.key === "Enter") {
+          calculateTotal();
+        }
+      }
+
+      function calculateTotal() {
+        const inputElement = document.querySelector(".js-input-button");
+        let cost = Number(inputElement.value);
+        if (cost < 40) {
+          cost += 10; // Type coersion
+        } else {
+          cost === cost;
+        }
+        document.querySelector(".js-order-cost").innerHTML = `$${cost}`;
+      }
+
+      function subscribe() {
+        const buttonElement = document.querySelector(".js-subscribe-button");
+
+        if (buttonElement.innerText === "Subscribe") {
+          buttonElement.innerHTML = "Subscribed";
+          buttonElement.classList.add("is-subscribed");
+        } else {
+          buttonElement.innerHTML = "Subscribe";
+          buttonElement.classList.remove("is-subscribed");
+        }
+      }
+    </script>
+  </body>
+</html>

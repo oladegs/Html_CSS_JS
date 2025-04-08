@@ -1,0 +1,161 @@
+<!-- 
+ When we update the calculation: 
+ 1) display on the page instead of in console 
+ 2) when the page first loads (ls), if a calc exists is ls , display it -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator-JS</title>
+    <link rel="stylesheet" href="Styles/calculator.css" />
+  </head>
+  <body>
+    <p class="js-text-calculate calculation"></p>
+    <p>
+      <button
+        class="calculator-button button-grey"
+        onclick="
+updateCalculation('1')"
+      >
+        1
+      </button>
+      <button
+        class="calculator-button button-grey"
+        onclick="
+updateCalculation('2')"
+      >
+        2
+      </button>
+      <button
+        class="calculator-button button-grey"
+        onclick="
+updateCalculation('3')"
+      >
+        3
+      </button>
+      <button
+        class="calculator-button button-orange"
+        onclick="
+updateCalculation(' + ')"
+      >
+        +
+      </button>
+    </p>
+
+    <p>
+      <button
+        class="calculator-button button-grey"
+        onclick="
+updateCalculation('4')"
+      >
+        4
+      </button>
+      <button
+        class="calculator-button button-grey"
+        onclick="
+updateCalculation('5')"
+      >
+        5
+      </button>
+      <button
+        class="calculator-button button-grey"
+        onclick="
+updateCalculation('6')"
+      >
+        6
+      </button>
+      <button
+        class="calculator-button button-orange"
+        onclick="
+updateCalculation(' - ')"
+      >
+        -
+      </button>
+    </p>
+
+    <p>
+      <button
+        class="calculator-button button-grey"
+        onclick="
+updateCalculation('7')"
+      >
+        7
+      </button>
+      <button
+        class="calculator-button button-grey"
+        onclick="
+updateCalculation('8')"
+      >
+        8
+      </button>
+      <button
+        class="calculator-button button-grey"
+        onclick="
+updateCalculation('9')"
+      >
+        9
+      </button>
+      <button
+        class="calculator-button button-orange"
+        onclick="
+updateCalculation(' * ')"
+      >
+        *
+      </button>
+    </p>
+    <p>
+      <button
+        class="calculator-button button-grey"
+        onclick="
+updateCalculation('0')"
+      >
+        0
+      </button>
+
+      <button
+        class="calculator-button button-grey"
+        onclick="
+updateCalculation('.')"
+      >
+        .
+      </button>
+
+      <!-- Note: eval() takes a string and runs it as code.
+      // Avoid using eval() in real world projects since
+      // it can potentially be given harmful code to run.
+       Only use eval() for learning purposes. -->
+      <button
+        class="calculator-button button-grey"
+        onclick="
+    calculation  = eval(calculation);
+   // console.log(calculation);
+   displayCalculation();
+   localStorage.setItem('calculation', calculation);"
+      >
+        =
+      </button>
+      <button
+        class="calculator-button button-orange"
+        onclick="
+updateCalculation(' / ')"
+      >
+        /
+      </button>
+    </p>
+
+    <p>
+      <button
+        class="calculator-button button-grey clear-button"
+        onclick="
+ calculation = '';
+ displayCalculation();
+ localStorage.setItem('calculation', calculation);
+"
+      >
+        Clear
+      </button>
+    </p>
+    <script src="Scripts/calculator.js"></script>
+  </body>
+</html>

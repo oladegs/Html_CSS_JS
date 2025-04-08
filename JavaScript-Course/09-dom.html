@@ -1,0 +1,67 @@
+<!-- 
+    Document Object Model
+    DOM : Another Built-In Object called the Document Object
+    The document object represents or models the webpage, it is linked to the webpage
+    The document has properties and methods
+
+    Window object represents the browser, which means everything(ie. webpage) inside the browser is in the window object 
+
+    We can have HTML elements inside JS 
+    The DOM combines JS and HTML together and it gives JS control of the webpage
+
+    The HTML element is converted into a JS Object when it is inside a JS
+    innerHTML ~ gives the entire HTML inside the element , JS can replace anything with this property
+    Every HTML element has a property .innerHTML 
+
+    document.body - lets us get body and put it inside JS whilst 
+    document.querySelector - lets us get any element from the page and put it inside JS
+    using class in js, always start with js-xxx ~ class-selector : It allows us to target specifics 
+
+    HTML are JS Objects and we can save Objects(values) as a variable
+
+    Be careful of spaces , it affects innerHTML - we can use innerText instead
+
+    Always turn repetitive and too many lines of code to a fn 
+    
+    For elements like input with no html inside , we use value
+
+    Events are like click, keydown 
+    Event listeners are like onclick, onkeydown 
+    Every event listener gets an event object 
+
+    If a string only contains a number and we -*/ >> It will be converted into a number 
+    Always do maths using numbers and not strings
+
+    We dont have to type "Window", JS will automatically add it . It is a built-in object that repr browser, JS automattically converts to window when we using document 
+   -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+    <style>
+      body {
+        background-color: rgb(235, 218, 181);
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <button>Hello</button>
+    <button class="js-button">Second button</button>
+    <script>
+      console.log(document.querySelector("button").innerHTML);
+      document.querySelector("button").innerHTML = "Changed";
+      const buttonElement = document.querySelector(".js-button");
+      console.log(buttonElement);
+
+      /*console.log(document.title);
+      console.log(document.body);
+      console.log(document.body.innerHTML);
+      document.body.innerHTML = "<button>Good job!</button>";
+      // document.body.innerHTML = "hello";
+      // document.title = "Good"; */
+    </script>
+  </body>
+</html>

@@ -1,0 +1,163 @@
+<!--
+An object groups/use  multiple and relatable values together 
+- an object is another type of value 
+
+- Objects makes our code more organized 
+- Inside an object, we can save any type of value 
+- A function is another type of value 
+- Function inside object - Method ; Object + Function ~ Method 
+- Built-in Objects ie console, Math , JSON, LocalStorage
+
+JSON : Built in object : helps us work with JSON 
+JSON - Javascript Object Notation: a syntax. similar to JS object, but has less features 
+syntax : All properties and string must use double quote , and it doesnt support fns
+
+JS syntax only make sense in JS but JSON syntax makes sense in all programming languages, it is more universal
+
+We use JSON when:
+- we send data btw computers that might use two different programming languages 
+- when we store data 
+
+Built-in JSON Object: It helps us to convert JS Object to JSON like .stringify, .parse
+
+LocalStorage : Built in object : 
+- save values more permanently, variables are temporary , they only exist on the current page, if we refresh or close the page , all the variables are deleted but thats not the case for localStorage
+- Local storage only supports strings. We convert the object into a string 
+
+When something doesn't exist in local storage we get the 'NULL' value, the solution is to give it a default value so as to avoid these errors 
+(null) => intentionally want smg to be empty 
+
+AutoBoxing :
+- Aside object , others may also have properties and values like string
+- When JS automatically wraps the string around with a special object like a box, it works with numbers & booleans , it doesnt work with null or undefined 
+
+Objects are References : They act like shortcuts, it points to where the actual file is. The actual value is created in the computer's memory and the object points to it as a reference. It makes our coding more efficient rather than repeating the same thing over and over 
+
+const prevents us from changing the reference itself and not the value in the computer's memory 
+const object2 = object1 ~ copies just the reference not the actual value 
+
+Objects : comparing the references not the values inside 
+
+FALSY VALUES : null, undefined , 0 , NAN , "", false
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objects</title>
+    <style>
+      body {
+        background-color: rgb(111, 173, 105);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Objects</h1>
+
+    <script>
+      /*
+      const product = {
+        name: "socks", // Property - Value Pair
+        price: 1090,
+      };
+      console.log(product);
+      console.log(product.name);
+      console.log(product.price);
+
+      product.name = "cotton socksss";
+      console.log(product);
+
+      product.newProperty = true;
+      console.log(product);
+
+      delete product.newProperty;
+      console.log(product);
+
+      product.highschool = "dansol";
+      console.log(product);
+      
+
+      const product2 = {
+        name: "shirt",
+        "delivery-time": "1 day",
+        rating: {
+          stars: 4.5,
+          count: 87,
+        },
+        fun: function function1() {
+          console.log("function inside object");
+        },
+      };
+      console.log(product2);
+      console.log(product2.name);
+      console.log(product2["name"]);
+      console.log(product2["delivery-time"]);
+      console.log(product2.rating.count);
+      product2.fun();
+      console.log(typeof console.log);
+
+      //JSON - JS ~ You get a string
+      console.log(JSON.stringify(product2));
+
+      //JS - JSON ~ You get a string
+      const jsonStringgg = JSON.stringify(product2);
+      console.log(JSON.parse(jsonStringgg));
+      */
+
+      console.log("hello".length);
+      console.log("hello".toUpperCase());
+
+      const object1 = {
+        message: "hello",
+      };
+      const object2 = object1;
+
+      object1.message = "Good job!";
+      console.log(object1);
+      console.log(object2);
+
+      const object3 = {
+        message: "Good job!",
+      };
+
+      console.log(object3 === object1);
+      console.log(object2 === object1);
+
+      const object4 = {
+        message: "Good job!",
+        price: 799,
+      };
+
+      // Destructuring Shortcut: Easier way to take properties out of an object
+      // const message = object4.message;
+      const { message, price } = object4;
+      console.log(message);
+      console.log(price);
+
+      /* Short hand property
+      - Since message already exists in the current scope (from object4), JavaScript automatically assigns message from object4 to object5.
+      
+      - For shortHand Method , you dont need the ()
+      */
+      const object5 = {
+        //message: message,
+        message,
+        // method: function function1() {
+        //   console.log("methodz");
+        // },
+        method() {
+          console.log("methodzx");
+        },
+      };
+      console.log(object5);
+      object5.method();
+      console.log((3.0).toString());
+      console.log(true.toString());
+    </script>
+  </body>
+</html>

@@ -1,0 +1,139 @@
+<!--
+ We cant use let as a variable keyword because it is a reserved word
+ two types of special chars we can use when creating variables : $name , _name  
+ ; end of an instruction 
+
+ Naming Conventions
+ ------------------
+ we use camelCase for JS - cartQuantity
+ PascalCase
+ kebab-case; used in HTML and CSS
+ snake_case
+
+ let & const - cant change its value later ; use const by default and let when we need to change the variable
+ var - Original way of creating variable
+
+ An early return make our code cleaner because we can remove the else-if / else
+
+      In cart quantity:
+    1) create a <p>
+    2) whenever we update the quantity, display it on the page instead of console
+    3) display the quant wgen page first loads (ls)
+
+
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Variables</title>
+    <style>
+      body {
+        background-color: rgb(184, 176, 192);
+      }
+    </style>
+  </head>
+  <body>
+    <button
+      onclick="displayCartQuantity(); //console.log(`Cart quantity: ${cartQuantity}`);"
+    >
+      Show Quantity
+    </button>
+    <button
+      onclick="
+      updateCartQuantity(1)
+     "
+    >
+      Add to Cart
+    </button>
+    <button
+      onclick="
+    updateCartQuantity(2)
+   "
+    >
+      +2
+    </button>
+    <button
+      onclick="
+    updateCartQuantity(3)
+   "
+    >
+      +3
+    </button>
+    <button
+      onclick="
+    updateCartQuantity(4)
+   "
+    >
+      +4
+    </button>
+    <button
+      onclick="
+    updateCartQuantity(5)
+   "
+    >
+      +5
+    </button>
+    <button
+      onclick="
+    updateCartQuantity(-1)
+   "
+    >
+      Remove from cart
+    </button>
+    <button
+      onclick="
+    updateCartQuantity(-2)
+   "
+    >
+      -2
+    </button>
+    <button
+      onclick="
+    updateCartQuantity(-3)
+   "
+    >
+      -3
+    </button>
+    <button
+      onclick="
+    cartQuantity = 0;
+      console.log('Cart was reset.');
+      console.log(`Cart quantity: ${cartQuantity}`);
+
+      displayCartQuantity();
+   "
+    >
+      Reset Cart
+    </button>
+    <p class="js-cart-quantity"></p>
+
+    <script>
+      let cartQuantity = 0;
+      // console.log(typeof cartQuantity);
+
+      // Display The Cart Quantity When The Page Loads
+      displayCartQuantity();
+
+      function updateCartQuantity(quantity) {
+        if (cartQuantity + quantity > 10) {
+          alert(`The cart id full and don't update the quantity`);
+          return;
+        }
+        if (cartQuantity + quantity < 0) {
+          alert(`Not enough items in the cart`);
+          return;
+        }
+        cartQuantity += quantity;
+        displayCartQuantity();
+      }
+
+      function displayCartQuantity() {
+        document.querySelector(
+          ".js-cart-quantity"
+        ).innerHTML = `Cart quantity: ${cartQuantity}`;
+      }
+    </script>
+  </body>
+</html>

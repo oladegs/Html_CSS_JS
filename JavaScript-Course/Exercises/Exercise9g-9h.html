@@ -1,0 +1,85 @@
+<!--
+Process for JS : Figure out what steps we need(algorithm), convert these steps into code 
+Algorithms : Steps we need :
+- When we click the button , If the text is "Subscribe" => "Subscribed"
+- Otherwise, change it back => "Subscribe"
+
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Projects</title>
+
+    <style>
+      body {
+        background-color: rgb(121, 197, 155);
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+    Figure out what steps we need , convert those steps into code 
+    When we click the button:
+    1) Get the text in the text box
+    2) If amount <40 , add 10 
+    3) Display total on the page
+
+    When we release a key
+    1) text shows in the <p>
+    2)
+    3)
+    -->
+    <p>Amazon Shipping Calculator</p>
+    <input
+      class="js-input-button"
+      placeholder="Cost of order"
+      onkeydown="
+      handleCostKeydown(event);
+      "
+    />
+    <button
+      class="js-calculate-button"
+      onclick="
+     calculateTotal();
+      "
+    >
+      Calculate
+    </button>
+    <p class="js-order-cost"></p>
+
+    <input
+      class="js-input"
+      onkeyup="getValue();  
+      "
+    />
+    <p class="js-text"></p>
+
+    <script>
+      function handleCostKeydown(event) {
+        console.log(event.key);
+        if (event.key === "Enter") {
+          calculateTotal();
+        }
+      }
+
+      function calculateTotal() {
+        const inputElement = document.querySelector(".js-input-button");
+        let cost = Number(inputElement.value) * 100;
+        if (cost < 4000) {
+          cost = cost + 1000; // Type coersion
+        } else {
+          cost === cost;
+        }
+        document.querySelector(".js-order-cost").innerHTML = `$${cost / 100}`;
+      }
+
+      function getValue() {
+        const inputElement = document.querySelector(".js-input").value;
+        document.querySelector(".js-text").innerHTML = `${inputElement}`;
+      }
+    </script>
+  </body>
+</html>

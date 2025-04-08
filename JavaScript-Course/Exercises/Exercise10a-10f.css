@@ -1,0 +1,54 @@
+body {
+  background-color: white;
+  font-family: Arial;
+}
+
+.cart {
+  background-color: rgb(255, 216, 20);
+  padding: 5px 40px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.divvv {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.request {
+  background-color: black;
+  color: white;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: bold;
+  margin-right: 15px;
+}
+
+.schedule {
+  background-color: rgb(230, 230, 230);
+  color: black;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.on-off {
+  background-color: rgb(230, 230, 230);
+  color: black;
+  padding: 15px 18px;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.is-toggled {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}

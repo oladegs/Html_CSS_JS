@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objects</title>
+    <style>
+      body {
+        background-color: rgb(126, 23, 74);
+        color: white;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <input
+      class="js-input"
+      placeholder="type smg..."
+      onkeydown="usingKeyEnter(event);
+      "
+    />
+    <button
+      class="js-submit-button"
+      onclick=" getValue();
+  "
+    >
+      Submit
+    </button>
+    <p class="js-name"></p>
+    <script>
+      function usingKeyEnter(event) {
+        if (event.key === "Enter") {
+          getValue();
+        }
+      }
+
+      function getValue() {
+        const inputElement = document.querySelector(".js-input").value;
+        document.querySelector(
+          ".js-name"
+        ).innerHTML = `Your name is: ${inputElement}`;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!--
+Arrays :
+- another type of value 
+- repr a list of values
+- it is an object but a special type of object 
+ 0 indexed array when index starts at 0
+ 
+ Loops let us run some code over and over 
+ True: Loop will keep going 
+ False ; Loop will stop 
+
+ Standard loop - For loop : is shorter and more organized than while loop 
+ Non Standard loop - While loop 
+
+ Looping through an Array:
+ - Go through each value of an array one by one 
+ - do smg with each value 
+
+ Accumulator Pattern:
+ - create a variable to store the result 
+ - loop through the array and update the result 
+
+ We can use different types of values to accumulate the result 
+
+ <div> doesnt have any default styling 
+
+  Main idea of JS:
+  - Save the data 
+  - Generate the HTML
+  - Make it interactive 
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrays and Loops</title>
+  </head>
+  <body>
+    <script>
+      const myArray = [10, 20, 30];
+      console.log(myArray);
+
+      console.log(myArray[1]);
+      myArray[0] = 99;
+      console.log(myArray);
+
+      [1, "hello", true, { name: "socks" }, [1, 2]];
+
+      console.log(typeof [1, 2]);
+      console.log(Array.isArray([1, 2]));
+      console.log(myArray.length);
+
+      myArray.push(100);
+      console.log(myArray);
+
+      // 1.Index we want to remove 2.Number of values to remove
+      myArray.splice(0, 1);
+      console.log(myArray);
+    </script>
+  </body>
+</html>

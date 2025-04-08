@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objects</title>
+    <style>
+      body {
+        background-color: rgb(171, 218, 203);
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="js-9a">9a-c</button>
+    <br />
+
+    <button class="js-heads" onclick="headOrTail('heads')">heads</button>
+    <button class="js-tails" onclick="headOrTail('tails')">tails</button>
+    <p class="js-choice"></p>
+    <script>
+      const buttonElement = document.querySelector(".js-9a");
+      console.log(buttonElement);
+
+      buttonElement.innerHTML = "9b done!";
+      console.log(buttonElement);
+
+      function headOrTail(choice) {
+        document.querySelector(".js-choice").innerHTML = `You chose: ${choice}`;
+      }
+    </script>
+  </body>
+</html>

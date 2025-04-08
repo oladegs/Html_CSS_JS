@@ -1,0 +1,170 @@
+<!-- 
+ - When picking a fn name , use a verb to pick 
+ - The script element runs when the page is loaded 
+ - any variable in the curly bracket only exist btw the curly bracket 
+
+ Return Statement : 
+ - Lets us get a value out of a function
+ - When we use this statement, it ends the function immediately
+ - the code returns back to where we called the statement , that is why is called a Return Statement 
+
+ Following the code line by line is called 'Tracing the code '
+ Best Practice is to keep variables inside a scope as much as we can 
+ When we want to use fns that has small diff amongst one another , thats when we use Parameters 
+
+ parameter :
+- lets us put a value into a function 
+- it works same way as a variable 
+
+Syntax : We type the parameter name btw the brackets ; We cant use special words, cant start with a number 
+
+Best Prac is to use camelCase
+- Parameter exists within the function scope 
+- If we dont pass in a value , the parameter would get 'undefined'
+- Equate parameter to any value to set a default value 
+
+Functions helps to remove duplication 
+
+I can generate more if-else blocks based on the previous values , i can just equate them
+
+If we need to re-assign a variable , we have to change it from const to let
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock-Paper-Scissors</title>
+
+    <style>
+      body {
+        background-color: lightcoral;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Rock, Paper, Scissors</h1>
+
+    <!-- Rock -->
+    <button
+      onclick="
+  playGame('Rock');
+  "
+    >
+      Rock
+    </button>
+
+    <!-- Paper -->
+    <button
+      onclick="
+  playGame('Paper');
+    "
+    >
+      Paper
+    </button>
+
+    <!-- Scissors -->
+    <button
+      onclick="
+  playGame('Scissors');
+    "
+    >
+      Scissors
+    </button>
+
+    <!-- Reset Score -->
+    <button
+      onclick="
+    score.wins = 0;
+    score.losses = 0;
+    score.ties = 0;
+    localStorage.removeItem('score');
+    "
+    >
+      Reset Score
+    </button>
+    <script>
+      // Algorithm (R-P-S)
+      // 1) Computer randomly selects a move
+      // 2) Compare the moves to get the result
+      // 3) Update a score
+      // 4) Display the result in a popup
+      let score = JSON.parse(localStorage.getItem("score")) || {
+        wins: 0,
+        losses: 0,
+        ties: 0,
+      };
+
+      /*
+      ^^^ ^^^ ^^^
+      score === null OR !score ~ Solution to null Errors
+      if (!score) {
+        score = {
+          wins: 0,
+          losses: 0,
+          ties: 0,
+        };
+      }
+      */
+
+      function playGame(playerMove) {
+        const computerMove = pickComputerMove();
+        let result = "";
+        if (playerMove === "Scissors") {
+          if (computerMove === "Rock") {
+            result = "You Lose";
+          } else if (computerMove === "Paper") {
+            result = "You Win";
+          } else if (computerMove === "Scissors") {
+            result = "Tie";
+          }
+        } else if (playerMove === "Paper") {
+          if (computerMove === "Rock") {
+            result = "You Win";
+          } else if (computerMove === "Paper") {
+            result = "Tie";
+          } else if (computerMove === "Scissors") {
+            result = "You Lose";
+          }
+        } else if (playerMove === "Rock") {
+          if (computerMove === "Rock") {
+            result = "Tie";
+          } else if (computerMove === "Paper") {
+            result = "You Lose";
+          } else if (computerMove === "Scissors") {
+            result = "You Win";
+          }
+        }
+
+        if (result === "You Win") {
+          score.wins++;
+        } else if (result === "You Lose") {
+          score.losses++;
+        } else if (result === "Tie") {
+          score.ties++;
+        }
+
+        localStorage.setItem("score", JSON.stringify(score));
+
+        alert(
+          `You picked ${playerMove}. Computer picked ${computerMove}. ${result}.
+Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`
+        );
+      }
+
+      function pickComputerMove() {
+        let computerMove = "";
+        const randomNumber = Math.random();
+        if (randomNumber >= 0 && randomNumber < 1 / 3) {
+          computerMove = "Rock";
+        } else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
+          computerMove = "Paper";
+        } else if (randomNumber >= 2 / 3 && randomNumber < 1) {
+          computerMove = "Scissors";
+        }
+        return computerMove; // returning a value from a function
+      }
+    </script>
+  </body>
+</html>

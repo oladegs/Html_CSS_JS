@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise8</title>
+    <style>
+      body {
+        background-color: rgb(133, 187, 149);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Exercise 8</h1>
+    <script>
+      const product = {
+        name: "basketball",
+        price: 2095,
+      };
+      product.price += 500;
+      console.log(product);
+
+      product["delivery-time"] = "3 days";
+      console.log(product);
+
+      function comparePrice(product1, product2) {
+        if (product1.price < product2.price) {
+          return product1;
+        } else {
+          return product2;
+        }
+      }
+
+      const product1 = {
+        name: "pillow",
+        price: 300,
+      };
+
+      const product2 = {
+        name: "duvet",
+        price: 1200,
+      };
+      console.log(comparePrice(product1, product2));
+
+      const product21 = {
+        name: "basketball",
+        price: 2095,
+      };
+
+      const product31 = {
+        name: "socks",
+        price: 1090,
+      };
+
+      const product41 = {
+        name: "basketball",
+        price: 2095,
+      };
+
+      /* 
+      function isSameProduct(product21, product32) {
+        if (
+          product21.name === product32.name &&
+          product21.price === product32.price
+        ) {
+          return true;
+        } else {
+          return false;
+        }
+      }*/
+
+      //Here is an alternative solution that uses less code.
+      function isSameProduct(product1, product2) {
+        return (
+          product1.name === product2.name && product1.price === product2.price
+        );
+      }
+      console.log(isSameProduct(product21, product31));
+      console.log(isSameProduct(product21, product41));
+
+      const greeting = "Good Morning ";
+      console.log(greeting.toLowerCase());
+
+      const repeatedText = "test";
+      console.log(repeatedText.repeat(2));
+    </script>
+  </body>
+</html>
