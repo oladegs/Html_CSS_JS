@@ -12,13 +12,6 @@ const todoList = JSON.parse(localStorage.getItem("todoList")) || [
 
 renderTodoList();
 
-/*
-todoList.splice(${i}, 1);: Removes 1 item at position i from the todoList array.
-
-renderTodoList();: Refreshes the list so the deleted item disappears from the page immediately.
-
-saveToStorage();: Updates the browser's localStorage so the change is saved permanently (even after refresh).
-*/
 function renderTodoList() {
   // Start with an empty string to build the full HTML content for the to-do list
   let todoListHTML = "";
@@ -38,7 +31,7 @@ function renderTodoList() {
       <div>${dueDate}</div>        <!-- Display the due date -->
 
       <button onclick="
-        // When the button is clicked, remove this item from the todoList array
+        // When the button is clicked, remove this item from the todoList array by (removing currentIndex,howManyItems_startingFromCurrentIndex)
         todoList.splice(${i}, 1);
 
         // Re-render the list after deleting
@@ -81,3 +74,30 @@ function addTodo() {
 function saveToStorage() {
   localStorage.setItem("todoList", JSON.stringify(todoList));
 }
+
+/*
+const todoListx = ["make dinner", "wash dishes", "watch youtube"];
+
+for (let i = 0; i < todoListx.length; i++) {
+  const value = todoListx[i];
+  console.log(value);
+}
+
+
+//Accumulator Pattern
+const nums = [1, 1, 3];
+let total = 0; //Accumulator variable
+
+for (let i = 0; i < nums.length; i++) {
+  const num = nums[i];
+  total += num;
+}
+console.log(total);
+
+const numsDoubled = [];
+for (let i = 0; i < nums.length; i++) {
+  const num = nums[i];
+  numsDoubled.push(num * 2);
+}
+console.log(numsDoubled);
+*/

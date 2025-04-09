@@ -4,7 +4,8 @@ Arrays :
 - repr a list of values
 - it is an object but a special type of object 
  0 indexed array when index starts at 0
- 
+ - It is a reference object , actual value is not stored just the address 
+
  Loops let us run some code over and over 
  True: Loop will keep going 
  False ; Loop will stop 
@@ -28,6 +29,11 @@ Arrays :
   - Save the data 
   - Generate the HTML
   - Make it interactive 
+
+  In loops , we have two features : Break & Continue 
+  Break  ~  exit a loop early 
+  continue ~ skip 1 iteration
+  return - another way of breaking out of a loop when is in a function
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -38,25 +44,75 @@ Arrays :
   </head>
   <body>
     <script>
-      const myArray = [10, 20, 30];
-      console.log(myArray);
+      /*
+         const myArray = [10, 20, 30];
+         console.log(myArray);
 
-      console.log(myArray[1]);
-      myArray[0] = 99;
-      console.log(myArray);
+         console.log(myArray[1]);
+         myArray[0] = 99;
+         console.log(myArray);
 
-      [1, "hello", true, { name: "socks" }, [1, 2]];
+         [1, "hello", true, { name: "socks" }, [1, 2]];
 
-      console.log(typeof [1, 2]);
-      console.log(Array.isArray([1, 2]));
-      console.log(myArray.length);
+         console.log(typeof [1, 2]);
+         console.log(Array.isArray([1, 2]));
+         console.log(myArray.length);
 
-      myArray.push(100);
-      console.log(myArray);
+         myArray.push(100);
+         console.log(myArray);
 
-      // 1.Index we want to remove 2.Number of values to remove
-      myArray.splice(0, 1);
-      console.log(myArray);
+         // 1.Index we want to remove 2.Number of values to remove
+         myArray.splice(0, 1);
+         console.log(myArray);
+       */
+      const array1 = [1, 2, 3]; // This is a reference
+      const array2 = array1.slice();
+      array2.push(4);
+      console.log(array1);
+      console.log(array2);
+
+      //Destructuring
+      const [firstValue, secondValue] = [1, 2, 3];
+
+      for (let i = 1; i < 10; i++) {
+        if (i % 3 === 0) {
+          continue;
+        }
+        console.log(i);
+        if (i === 8) {
+          break;
+        }
+      }
+
+      let result = "(";
+      let i = 1;
+      while (i <= 10) {
+        if (i % 3 === 0) {
+          i++;
+          continue;
+        }
+        result += i;
+        if (i < 10) {
+          result += ",";
+        }
+        i++;
+      }
+      result += ")";
+      console.log(result);
+
+      function doubleArray(nums) {
+        const numsDoubled = [];
+        for (let i = 0; i < nums.length; i++) {
+          const num = nums[i];
+          if (num === 0) {
+            return numsDoubled;
+          }
+          numsDoubled.push(num * 2);
+        }
+        return numsDoubled;
+      }
+      console.log(doubleArray([1, 1, 3]));
+      console.log(doubleArray([4, 4, 10, 3, 4, 0, 5]));
     </script>
   </body>
 </html>
