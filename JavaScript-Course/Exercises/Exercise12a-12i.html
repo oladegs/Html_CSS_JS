@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>App</title>
+  </head>
+  <body>
+    <button class="js-finish" onclick="finish()">Finish</button>
+    <button class="js-add-cart" onclick="addToCart()">Add to cart</button>
+    <p class="js-added"></p>
+    <br />
+
+    <button
+      class="js-add"
+      onclick="
+    messageNo++
+    Notify();
+  "
+    >
+      Add
+    </button>
+    <button
+      class="js-remove"
+      onclick="
+    if(messageNo > 0){
+      messageNo--  
+      // If there are no new messages, stop displaying
+        // the notification in the tab.
+        if (messageNo === 0) {
+          stopNotification();
+        }
+    }"
+    >
+      Remove
+    </button>
+    <script>
+      //12a
+      let add;
+      add = function () {
+        console.log(2 + 3);
+      };
+      add();
+      add();
+
+      //12b
+      function runTwice(fun) {
+        fun();
+        fun();
+      }
+      runTwice(function () {
+        console.log("12b");
+      });
+      runTwice(add);
+
+      //12c , 12d
+      function finish() {
+        const buttonElement = document.querySelector(".js-finish");
+        if ((buttonElement.innerHTML = "Finish")) {
+          buttonElement.innerHTML = "Loading...";
+          setTimeout(function () {
+            buttonElement.innerHTML = "Finished";
+          }, 1000);
+        }
+      }
+
+      //12e ,12f
+      let timeoutId;
+      function addToCart() {
+        const buttonElement = document.querySelector(".js-add-cart");
+        if ((buttonElement.innerHTML = "Add to cart")) {
+          document.querySelector(".js-added").innerHTML = "Added";
+
+          // necessary because the first timeOut is still running and would make the message dissapear very soon , so first cancel the previous timeout so that it doesnt remove too quickly
+          clearTimeout(timeoutId);
+
+          timeoutId = setTimeout(function () {
+            document.querySelector(".js-added").innerHTML = "";
+          }, 2000);
+        }
+      }
+
+      //12g-12i
+      // Keep track of how many new messages we have (starting with 2)
+      let messageNo = 2;
+
+      // We'll use this to store the ID of the blinking effect (so we can stop it later)
+      let intervalId;
+
+      // We'll use this variable to keep track of whether or not we're displaying the notification.
+      let isNotifying;
+
+      // Start displaying the notification in the tab
+      // when the page first loads.
+      Notify();
+
+      // This function makes the browser tab title blink with message count
+      function Notify() {
+        // If we're already displaying the notification,
+        // stop this function because we don't want to
+        // create 2 intervals at the same time.
+        if (isNotifying) {
+          return;
+        }
+        isNotifying = true;
+
+        // Set up something that runs every 1 second (1000 milliseconds)
+        intervalId = setInterval(function () {
+          // If the tab title is just "App", change it to show the number of new messages
+          if (document.title === "App") {
+            document.title = `(${messageNo}) New messages`;
+          } else {
+            // Otherwise, change it back to just "App"
+            document.title = "App";
+          }
+        }, 1000); // This code runs every 1 second
+      }
+
+      function stopNotification() {
+        isNotifying = false;
+
+        clearInterval(intervalId);
+        document.title = "App";
+      }
+    </script>
+  </body>
+</html>

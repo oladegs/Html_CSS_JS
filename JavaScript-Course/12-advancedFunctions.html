@@ -1,0 +1,122 @@
+<!--
+Functions are values ; types of values : numbers, strings , booleans
+
+We can also save fns inside variables, they are values
+Hoisting is calling a fn before the fn is created in a code , it doesnt work when a fn is saved in a vriable
+
+As long as there is a way to access the fn without using the name , we delete it and use an anonymous fn
+
+Because functions are values, we can also pass a fn into a fn , the fn being passed in is called a Callback fn 
+
+Anything we can do with a value , we can also do w a function 
+
+setTimeOut() allows us to run a fn in the future 
+
+Asynchronous code : the computer won't wait for a line to finish before going to the next line
+Synchronous code : the computer will wait for one line to finish before going to the next line 
+
+Arrow Function ~ mostly work the same as regular functions
+Brackets are optional for just one param , we can also put all on one line and remove curly B x return statement
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Function</title>
+  </head>
+  <body>
+    <script>
+      /*
+      function greeting() {
+        console.log("Hello");
+      }
+      greeting();
+      //Shortcut for above
+      var greeting = function () {
+        console.log("Hello");
+      };
+
+      const num = 2;
+      const function1 = function greeting() {
+        console.log("Hey there");
+      };
+      console.log(function1);
+      console.log(typeof function1);
+      function1();
+
+      //Function without a name
+      const function11 = function () {
+        console.log("Hey there");
+      };
+
+      const object1 = {
+        num: 2,
+        fun: function greeting() {
+          console.log("Hello3");
+        },
+      };
+      object1.fun();
+
+      function display(param) {
+        console.log(param);
+      }
+      display(2);
+
+      function run(param) {
+        param();
+      }
+      run(function () {
+        console.log("hello4");
+      });
+
+
+      //takes 2 parameter , the first one is a parameter we want to run in the future
+      // fn(value) inside a fn , how long to wait before running
+      // setTimeOut - only part that is asynchronous, it doesnt block our code
+      setTimeout(function () {
+        console.log("timeout");
+      }, 3000);
+      console.log("next line");
+
+      // It will keep ruunning in the future
+      setInterval(function () {
+        console.log("interval");
+      }, 3000);
+      console.log("next line2");
+       */
+
+      // .forEach() is the preferred way to loop through an array, instead of using continue , we can only use return , and if we need to use break, just use a normal for-loop
+      ["make dinner", "wash dishes", "watch youtube"].forEach(
+        (value, index) => {
+          if (value === "wash dishes") {
+            return;
+          }
+          console.log(index);
+          console.log(value);
+        }
+      );
+
+      const regularFunction = function (param1, param2) {
+        console.log("regular-functions");
+        return 5;
+      };
+
+      const arrowFunction = (param1, param2) => {
+        console.log("arrow-functions");
+        return 5;
+      };
+      regularFunction();
+      arrowFunction();
+
+      //
+      const oneParam = (param) => {
+        console.log(param + 1);
+      };
+      oneParam(77);
+
+      const oneLine = () => 2 + 3;
+      console.log(oneLine());
+    </script>
+  </body>
+</html>

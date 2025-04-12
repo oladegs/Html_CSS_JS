@@ -16,6 +16,27 @@ function renderTodoList() {
   // Start with an empty string to build the full HTML content for the to-do list
   let todoListHTML = "";
 
+  todoList.forEach(function (todoObject, index) {
+    // Use object destructuring to extract name and dueDate from the current to-do object
+    const { name, dueDate } = todoObject;
+
+    // Build the HTML structure for this specific to-do item
+    const html = `
+      <div>${name}</div>           <!-- Display the name of the task -->
+      <div>${dueDate}</div>        <!-- Display the due date -->
+
+      <button onclick="
+        todoList.splice(${index}, 1);
+        renderTodoList();
+      " class="delete-todo-button">Delete</button> 
+    `;
+
+    todoListHTML += html;
+  });
+  document.querySelector(".js-todo-list").innerHTML = todoListHTML;
+}
+
+/*
   // Loop through each item in the todoList array
   for (let i = 0; i < todoList.length; i++) {
     const todoObject = todoList[i];
@@ -48,6 +69,7 @@ function renderTodoList() {
   // Inject the entire list into the HTML page inside the element with class .js-todo-list
   document.querySelector(".js-todo-list").innerHTML = todoListHTML;
 }
+*/
 
 function addTodo() {
   const inputElement = document.querySelector(".js-name-input");
