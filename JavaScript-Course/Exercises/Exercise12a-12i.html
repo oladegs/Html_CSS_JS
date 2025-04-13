@@ -6,8 +6,8 @@
     <title>App</title>
   </head>
   <body>
-    <button class="js-finish" onclick="finish()">Finish</button>
-    <button class="js-add-cart" onclick="addToCart()">Add to cart</button>
+    <button class="js-finish js-listener-finish">Finish</button>
+    <button class="js-add-cart js-listener-add">Add to cart</button>
     <p class="js-added"></p>
     <br />
 
@@ -54,11 +54,23 @@
       runTwice(add);
 
       //12c , 12d
+      document
+        .querySelector(".js-listener-finish")
+        .addEventListener("click", () => {
+          finish();
+        });
+
+      document
+        .querySelector(".js-listener-add")
+        .addEventListener("click", () => {
+          addToCart();
+        });
+
       function finish() {
         const buttonElement = document.querySelector(".js-finish");
         if ((buttonElement.innerHTML = "Finish")) {
           buttonElement.innerHTML = "Loading...";
-          setTimeout(function () {
+          setTimeout(() => {
             buttonElement.innerHTML = "Finished";
           }, 1000);
         }
@@ -74,7 +86,7 @@
           // necessary because the first timeOut is still running and would make the message dissapear very soon , so first cancel the previous timeout so that it doesnt remove too quickly
           clearTimeout(timeoutId);
 
-          timeoutId = setTimeout(function () {
+          timeoutId = setTimeout(() => {
             document.querySelector(".js-added").innerHTML = "";
           }, 2000);
         }
@@ -105,7 +117,7 @@
         isNotifying = true;
 
         // Set up something that runs every 1 second (1000 milliseconds)
-        intervalId = setInterval(function () {
+        intervalId = setInterval(() => {
           // If the tab title is just "App", change it to show the number of new messages
           if (document.title === "App") {
             document.title = `(${messageNo}) New messages`;
