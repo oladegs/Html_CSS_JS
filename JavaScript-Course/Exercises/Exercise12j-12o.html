@@ -34,6 +34,11 @@
       console.log(addNum([-2, -1, 0, 99], 2));
 
       // 12n, 12o
+      // If food is 'egg', the inner function returns false
+      //   and the food is not included in the result.
+      // Otherwise, the inner function returns true
+      //   and the food is included in the result.
+      // return foods.filter((food) => food !== 'egg');
       const removeEgg = (foods) => {
         let eggCount = 0;
         return foods.filter((value) => {

@@ -25,7 +25,20 @@ updateScoreElement();
 // setInterval() : returns a number , we can use it to stop the interval
 let isAutoPlaying = false;
 let intervalId;
-
+/*
+document.querySelector(".js-auto-play").addEventListener("click", () => {
+  const button = document.querySelector(".auto-play-button");
+  if (!isAutoPlaying) {
+    autoPlay();
+    button.innerHTML = "Stop Playing";
+    isAutoPlaying = true;
+  } else {
+    clearInterval(intervalId);
+    button.innerHTML = "Auto Playing";
+    isAutoPlaying = false;
+  }
+});
+*/
 // const autoPlay = () =>{}
 function autoPlay() {
   if (!isAutoPlaying) {
@@ -40,6 +53,48 @@ function autoPlay() {
   }
 }
 
+// You can put this fn in the autoPlay , but I like it like this as it is seperated
+function toggleAutoPlay() {
+  autoPlay();
+  const button = document.querySelector(".auto-play-button");
+  button.innerHTML = isAutoPlaying ? "Stop Playing" : "Auto Play";
+}
+
+function toggleResetScore() {
+  score.wins = 0;
+  score.losses = 0;
+  score.ties = 0;
+  localStorage.removeItem("score");
+  updateScoreElement();
+}
+
+// A helper function (it helps us reuse the
+// code for hiding the confirmation message).
+function hideResetConfirmation() {
+  document.querySelector(".js-reset-warning").innerHTML = "";
+}
+
+function showResetConfirmation() {
+  let resetHTML = "";
+  const html = `<p>
+      Are you sure you want to reset the score?
+      <button class="js-reset-yes">Yes</button>
+      <button class="js-reset-no">No</button>
+    </p>`;
+  resetHTML += html;
+
+  document.querySelector(".js-reset-warning").innerHTML = resetHTML;
+
+  document.querySelector(".js-reset-yes").addEventListener("click", () => {
+    toggleResetScore();
+    hideResetConfirmation();
+  });
+
+  document.querySelector(".js-reset-no").addEventListener("click", () => {
+    hideResetConfirmation();
+  });
+}
+
 document.querySelector(".js-rock-button").addEventListener("click", () => {
   playGame("rock");
 });
@@ -52,6 +107,14 @@ document.querySelector(".js-scissors-button").addEventListener("click", () => {
   playGame("scissors");
 });
 
+document.querySelector(".js-auto-play").addEventListener("click", () => {
+  toggleAutoPlay();
+});
+
+document.querySelector(".js-reset-score").addEventListener("click", () => {
+  showResetConfirmation();
+});
+
 document.body.addEventListener("keydown", (event) => {
   if (event.key === "r") {
     playGame("rock");
@@ -59,6 +122,10 @@ document.body.addEventListener("keydown", (event) => {
     playGame("paper");
   } else if (event.key === "s") {
     playGame("scissors");
+  } else if (event.key === "a") {
+    toggleAutoPlay();
+  } else if (event.key === "Backspace") {
+    showResetConfirmation();
   }
 });
 
@@ -105,8 +172,8 @@ function playGame(playerMove) {
   document.querySelector(".js-result").innerHTML = result;
   document.querySelector(
     ".js-moves"
-  ).innerHTML = `You <img src="images/${playerMove}-emoji.png" class="move-icon" />
-      <img src="images/${computerMove}-emoji.png" class="move-icon" />
+  ).innerHTML = `You <img src="../../images/${playerMove}-emoji.png" class="move-icon" />
+      <img src="../../images/${computerMove}-emoji.png" class="move-icon" />
       Computer`;
 }
 

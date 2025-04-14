@@ -4,25 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>09-RPS</title>
-    <link rel="stylesheet" href="Styles/RockPaperScissors.css" />
+    <link rel="stylesheet" href="12r.css" />
   </head>
   <body>
     <p class="title">Rock, Paper, Scissors</p>
 
     <!-- Rock -->
     <button class="move-button js-rock-button">
-      <img src="images/rock-emoji.png" class="move-icon" />
+      <img src="../../images/rock-emoji.png" class="move-icon" />
     </button>
 
     <!-- Paper -->
     <button class="move-button js-paper-button">
-      <img src="images/paper-emoji.png" class="move-icon" />
+      <img src="../../images/paper-emoji.png" class="move-icon" />
     </button>
 
     <!-- Scissors -->
     <button class="move-button js-scissors-button">
       <img
-        src="images/scissors-emoji.png"
+        src="../../images/scissors-emoji.png"
         class="move-icon js-scissors-button"
       />
     </button>
@@ -32,20 +32,11 @@
     <p class="js-score score"></p>
 
     <!-- Reset Score -->
-    <button
-      onclick="
-    score.wins = 0;
-    score.losses = 0;
-    score.ties = 0;
-    localStorage.removeItem('score');
-    updateScoreElement();
-    "
-      class="reset-score-button"
-    >
-      Reset Score
-    </button>
+    <button class="reset-score-button js-reset-score">Reset Score</button>
 
-    <button class="auto-play-button" onclick="autoPlay()">Auto Play</button>
-    <script src="Scripts/RockPaperScissors.js"></script>
+    <button class="auto-play-button js-auto-play">Auto Play</button>
+    <div class="js-reset-warning"></div>
+
+    <script src="12r.js"></script>
   </body>
 </html>
