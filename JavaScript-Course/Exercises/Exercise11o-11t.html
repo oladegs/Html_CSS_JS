@@ -23,11 +23,10 @@
       }
       console.log(index);
 
-      words = ["not", "found"];
+      let wordz = ["not", "found"];
       index = -1;
-
-      for (let i = 0; i < words.length; i++) {
-        if (words[i] === "search") {
+      for (let i = 0; i < wordz.length; i++) {
+        if (wordz[i] === "search") {
           index = i;
           break;
         }
@@ -53,6 +52,7 @@
       findIndex(["green", "red", "blue", "red"], "red");
       findIndex(["green", "red", "blue", "red"], "yellow");
 
+      // 11w
       // This function returns a new array with only unique values from the input array
       function unique(array) {
         // Create an empty array to store the unique words we find
@@ -97,7 +97,7 @@
       }
       removeEgg(["egg", "apple", "egg", "egg", "ham"]);
 
-      // 11t
+      // 11t x 11u
       function removeEggx(foods) {
         // To prevent modifying the original array, we
         // can create a copy of the array using .slice()
@@ -130,6 +130,7 @@
       }
       console.log(removeEggx(["egg", "apple", "egg", "egg", "ham"]));
 
+      // 11w
       function fizzBuzz(num) {
         const result = [];
         for (i = 0; i < num.length; i++) {

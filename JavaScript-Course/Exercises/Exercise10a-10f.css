@@ -48,7 +48,7 @@ body {
 }
 
 .is-toggled {
-  background-color: black;
+  background-color: rgb(134, 10, 10);
   color: white;
   cursor: pointer;
 }

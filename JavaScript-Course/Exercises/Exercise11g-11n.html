@@ -7,6 +7,7 @@
   </head>
   <body>
     <script>
+      // 11g
       const nums = [1, 2, 3];
       let numsByOne = [];
       for (i = 0; i < nums.length; i++) {
@@ -15,6 +16,7 @@
       }
       // console.log(numsByOne);
 
+      //11h
       function addOne(array) {
         const nums = array;
         let numsByOne = [];
@@ -27,6 +29,7 @@
       console.log(addOne([1, 2, 3]));
       console.log(addOne([-2, -1, 0, 99]));
 
+      //11i
       function addNum(array, num) {
         const nums = array;
         let numsByOne = [];
@@ -40,6 +43,7 @@
       console.log(addNum([1, 2, 3], 3));
       console.log(addNum([-2, -1, 0, 99], 2));
 
+      //11j , the fact that they are the same length really helped
       function addArrays(array1, array2) {
         let numsArray = [];
 
@@ -51,6 +55,7 @@
       console.log(addArrays([1, 1, 2], [1, 1, 3]));
       console.log(addArrays([1, 2, 3], [4, 5, 6]));
 
+      //11k
       function countPositive(nums) {
         const numsArray = [];
         for (i = 0; i < nums.length; i++) {
@@ -64,6 +69,7 @@
       console.log(countPositive([1, -3, 5]));
       console.log(countPositive([-2, 3, -5, 7, 10]));
 
+      //11l
       function minMax(nums) {
         // We'll set the starting values of min and max
         // as the first value in the array. (This is
@@ -94,6 +100,7 @@
       console.log(minMax([1, -3, 5]));
       console.log(minMax([-2, 3, -5, 7, 10]));
 
+      //11m
       function minMaxx(nums) {
         // We'll set the starting values of min and max
         // to null this time.
@@ -129,18 +136,24 @@
       console.log(minMaxx([]));
       console.log(minMaxx([3]));
 
+      //11n
       function countWords(words) {
         const result = {};
         for (let i = 0; i < words.length; i++) {
           const word = words[i];
 
-          // result[word] adds/accesses a property using whatever is
-          // saved inside the 'word' variable.
-          // If word = 'apple', result[word] will do result['apple']
-          // If word = 'grape', result[word] will do result['grape']
-          //result["apple"] = 1; is same as result.apple = 1;
-          // .push() is for adding to arrays
-          // object[key] = value is for creating or updating key-value pairs in objects
+          /*
+          result[word] adds/accesses a property using whatever is
+          saved inside the 'word' variable.
+          If word = 'apple', result[word] will do result['apple']
+          If word = 'grape', result[word] will do result['grape']
+          result["apple"] = 1; is same as result.apple = 1;
+          .push() is for adding to arrays
+          object[key] = value is for creating or updating key-value pairs in objects
+
+          The result object updates itself dynamically as the loop goes through each word in the array. It's like saying:
+          “If I’ve seen this word before, bump up its count. If not, start the count at 1.”
+          */
 
           if (!result[word]) {
             result[word] = 1;
