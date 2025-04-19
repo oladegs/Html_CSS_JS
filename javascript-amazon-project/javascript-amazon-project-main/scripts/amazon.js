@@ -54,9 +54,56 @@ products.forEach((product) => {
             Added
           </div>
 
-          <button class="add-to-cart-button button-primary">Add to Cart</button>
+          <button class="add-to-cart-button button-primary js-add-to-cart"
+          data-product-id="${product.id}">Add to Cart</button>
         </div>`;
 });
 
-console.log(productsHTML);
 document.querySelector(".js-products-grid").innerHTML = productsHTML;
+
+/*
+// cart.push({
+//   productName: 'Basketball',
+//   quantity: 1
+// })
+Steps for DRY: 
+1) Check if the product is already in the cart 
+2) If it is in the cart, increase the quantity 
+3) If it's not in the cart, add it to the cart
+
+No two products should have this name , to fix this:
+- give each product an id
+- this id should be unique 
+*/
+
+// Loop through all buttons with the class 'js-add-to-cart'
+document.querySelectorAll(".js-add-to-cart").forEach((addButton) => {
+  // Add a click event listener to each button
+  addButton.addEventListener("click", () => {
+    // Get the product name from the button's data attribute
+    const productId = addButton.dataset.productId;
+
+    // We'll use this variable to check if the item already exists in the cart
+    let matchingItem;
+
+    // Loop through the cart.push below to find if the product is already added
+    cart.forEach((item) => {
+      if (productId === item.productId) {
+        // If we find a match, store it in matchingItem
+        matchingItem = item;
+      }
+    });
+
+    // If the item is already in the cart, increase its quantity by 1
+    if (matchingItem) {
+      matchingItem.quantity++;
+    }
+    // If the item is not in the cart, add it with quantity set to 1
+    else {
+      cart.push({ productId: productId, quantity: 1 });
+    }
+
+    // Log the updated cart to the console
+    console.log(cart);
+  });
+});

@@ -11,3 +11,12 @@ Repository : a folder where changes are being tracked
 data - information ; information about our products
 
 We usually use a combination of object and arrays to create a DS
+
+How do we know which product to add?
+Data Attribute:
+
+- is just another HTML attribute
+- allows us to attach any information to an element
+- name on the left , value on the right
+- have to start with "data-" kebab case
+- then give it any name
