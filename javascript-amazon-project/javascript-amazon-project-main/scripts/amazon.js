@@ -74,6 +74,11 @@ Steps for DRY:
 No two products should have this name , to fix this:
 - give each product an id
 - this id should be unique 
+
+Steps for cartQuantity: 
+
+Calc the quantity
+put the quantity on the page 
 */
 
 // Loop through all buttons with the class 'js-add-to-cart'
@@ -103,7 +108,12 @@ document.querySelectorAll(".js-add-to-cart").forEach((addButton) => {
       cart.push({ productId: productId, quantity: 1 });
     }
 
-    // Log the updated cart to the console
-    console.log(cart);
+    // Calculate the total quantity of all items in the cart
+    let cartQuantity = 0;
+    cart.forEach((item) => {
+      cartQuantity += item.quantity;
+    });
+
+    document.querySelector(".js-cart-quantity").innerHTML = cartQuantity;
   });
 });
