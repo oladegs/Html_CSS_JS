@@ -20,3 +20,5 @@ Data Attribute:
 - name on the left , value on the right
 - have to start with "data-" kebab case
 - then give it any name
+
+Modules : a better way to organize our code
