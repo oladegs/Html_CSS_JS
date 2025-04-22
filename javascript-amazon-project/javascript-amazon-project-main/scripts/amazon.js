@@ -3,6 +3,7 @@
 Since we have a list of products , we are going to use a list
 and since each list has group of related items , we are going to use an Object
 */
+import { cart } from "../data/cart.js";
 
 let productsHTML = "";
 products.forEach((product) => {

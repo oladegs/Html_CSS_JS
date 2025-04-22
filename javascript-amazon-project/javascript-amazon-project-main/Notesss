@@ -22,3 +22,22 @@ Data Attribute:
 - then give it any name
 
 Modules : a better way to organize our code
+
+## Create a Module
+
+1. Create a file
+2. Dont load the file with <script></script>
+   ANy variables we create inside the file will be contained inside the file
+
+## Get a variable out of a file
+
+1. Add type="module" attribute : Lets this file get variables out of other files
+2. Export
+3. Import
+
+- Always put modules at the top of the file ,use live server and dont run html files directly
+
+## Benefits of module
+
+1. Avoids naming conflict
+2. Dont worry about order of files
