@@ -3,7 +3,7 @@
 Since we have a list of products , we are going to use a list
 and since each list has group of related items , we are going to use an Object
 */
-import { cart } from "../data/cart.js";
+import { cart, addToCart } from "../data/cart.js";
 import { products } from "../data/products.js";
 
 let productsHTML = "";
@@ -83,6 +83,16 @@ Calc the quantity
 put the quantity on the page 
 */
 
+function updateCartQuantity() {
+  // Calculate the total quantity of all items in the cart
+  let cartQuantity = 0;
+  cart.forEach((cartItem) => {
+    cartQuantity += cartItem.quantity;
+  });
+
+  document.querySelector(".js-cart-quantity").innerHTML = cartQuantity;
+}
+
 // Loop through all buttons with the class 'js-add-to-cart'
 document.querySelectorAll(".js-add-to-cart").forEach((addButton) => {
   // Add a click event listener to each button
@@ -90,32 +100,7 @@ document.querySelectorAll(".js-add-to-cart").forEach((addButton) => {
     // Get the product name from the button's data attribute
     const productId = addButton.dataset.productId;
 
-    // We'll use this variable to check if the item already exists in the cart
-    let matchingItem;
-
-    // Loop through the cart.push below to find if the product is already added
-    cart.forEach((item) => {
-      if (productId === item.productId) {
-        // If we find a match, store it in matchingItem
-        matchingItem = item;
-      }
-    });
-
-    // If the item is already in the cart, increase its quantity by 1
-    if (matchingItem) {
-      matchingItem.quantity++;
-    }
-    // If the item is not in the cart, add it with quantity set to 1
-    else {
-      cart.push({ productId: productId, quantity: 1 });
-    }
-
-    // Calculate the total quantity of all items in the cart
-    let cartQuantity = 0;
-    cart.forEach((item) => {
-      cartQuantity += item.quantity;
-    });
-
-    document.querySelector(".js-cart-quantity").innerHTML = cartQuantity;
+    addToCart(productId);
+    updateCartQuantity();
   });
 });

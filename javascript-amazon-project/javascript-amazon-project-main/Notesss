@@ -41,3 +41,10 @@ Modules : a better way to organize our code
 
 1. Avoids naming conflict
 2. Dont worry about order of files
+
+- The amazon.js file is the entry point of the code
+- Best practice : Group related code together into its own file
+
+import \* as cartModule from '../data/cart.js'
+cartModule.cart
+cartModule.addToCart('id'); and then we can access as a property or a method
