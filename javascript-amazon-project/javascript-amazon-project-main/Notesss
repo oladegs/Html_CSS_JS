@@ -48,3 +48,7 @@ Modules : a better way to organize our code
 import \* as cartModule from '../data/cart.js'
 cartModule.cart
 cartModule.addToCart('id'); and then we can access as a property or a method
+
+Normalizing the data : Normalization means organizing data to reduce redundancy and improve data integrity.
+
+Sometimes it simply means cleaning or standardizing data — like trimming spaces, converting to lowercase, formatting dates, etc.
