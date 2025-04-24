@@ -27,7 +27,7 @@ Modules : a better way to organize our code
 
 1. Create a file
 2. Dont load the file with <script></script>
-   ANy variables we create inside the file will be contained inside the file
+   Any variables we create inside the file will be contained inside the file
 
 ## Get a variable out of a file
 
