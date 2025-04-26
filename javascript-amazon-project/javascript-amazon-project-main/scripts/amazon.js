@@ -83,7 +83,7 @@ Steps for cartQuantity:
 Calc the quantity
 put the quantity on the page 
 */
-
+updateCartQuantity();
 function updateCartQuantity() {
   // Calculate the total quantity of all items in the cart
   let cartQuantity = 0;

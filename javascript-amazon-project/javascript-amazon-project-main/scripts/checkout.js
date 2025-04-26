@@ -101,6 +101,7 @@ To delete :
 - Use the DOM to get the element to remove
 - Use .remove() method
 */
+updateCartQuantity();
 
 document.querySelectorAll(".js-delete-link").forEach((link) => {
   link.addEventListener("click", () => {
@@ -112,5 +113,17 @@ document.querySelectorAll(".js-delete-link").forEach((link) => {
       `.js-cart-item-container-${productId}`
     );
     container.remove();
+    updateCartQuantity();
   });
 });
+
+function updateCartQuantity() {
+  // Calculate the total quantity of all items in the cart
+  let cartQuantity = 0;
+  cart.forEach((cartItem) => {
+    cartQuantity += cartItem.quantity;
+  });
+  document.querySelector(
+    ".js-return-to-home-link"
+  ).innerHTML = `${cartQuantity} items`;
+}
