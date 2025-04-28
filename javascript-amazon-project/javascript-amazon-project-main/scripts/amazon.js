@@ -3,7 +3,7 @@
 Since we have a list of products , we are going to use a list
 and since each list has group of related items , we are going to use an Object
 */
-import { cart, addToCart } from "../data/cart.js";
+import { cart, addToCart, calculateCartQuantity } from "../data/cart.js";
 import { products } from "../data/products.js";
 import { formatCurrency } from "./utils/money.js";
 
@@ -84,12 +84,9 @@ Calc the quantity
 put the quantity on the page 
 */
 updateCartQuantity();
+
 function updateCartQuantity() {
-  // Calculate the total quantity of all items in the cart
-  let cartQuantity = 0;
-  cart.forEach((cartItem) => {
-    cartQuantity += cartItem.quantity;
-  });
+  const cartQuantity = calculateCartQuantity();
 
   document.querySelector(".js-cart-quantity").innerHTML = cartQuantity;
 }
