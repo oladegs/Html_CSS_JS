@@ -52,3 +52,39 @@ cartModule.addToCart('id'); and then we can access as a property or a method
 Normalizing the data : Normalization means organizing data to reduce redundancy and improve data integrity.
 
 Sometimes it simply means cleaning or standardizing data — like trimming spaces, converting to lowercase, formatting dates, etc.
+
+## External Libraries, MVC , Finish the Checkout Page
+
+External Libraries: Code that is outside of our project >> How to put an HTML Website Online - learn how to put code online
+
+## Uses:
+
+- let us share code
+- save time
+- avoid duplicating work
+
+## Best practice in programming to save time and energy
+
+When we need smg complicated,
+
+- Try to find an external library first
+- Before writing the code ourselves
+
+To find like date : javascript date library
+
+## ESM Version
+
+A version that works with JS Modules
+ESM - Ecmascript Module
+Ecmascript = Javascript
+
+## Default Export
+
+- another way of exporting
+- we can use it when we only want to export 1 thing
+- when we have a curly bracket , we call it Named Export
+- not every library has an esm version , some libraries we still have a script tag
+
+Normalizing Data : When we save data somewhere(Object) and we have an Id pointed to the data that was saved
+
+For you to pass inaccessible variables , you can create a function and pass the variable as an argument
