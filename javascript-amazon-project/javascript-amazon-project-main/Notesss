@@ -90,3 +90,5 @@ Normalizing Data : When we save data somewhere(Object) and we have an Id pointed
 For you to pass inaccessible variables , you can create a function and pass the variable as an argument
 
 - Attribute 'checked' selector makes a selector checked
+
+Recursion : A function can call / re-run itself 
