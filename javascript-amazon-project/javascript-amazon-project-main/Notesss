@@ -92,3 +92,18 @@ For you to pass inaccessible variables , you can create a function and pass the 
 - Attribute 'checked' selector makes a selector checked
 
 Recursion : A function can call / re-run itself 
+
+Instead of using the dom and updating the html one by one 
+- Update the data 
+- Regenerate all the HTML 
+
+MVC :
+MODEL - VIEW - CONTROLLER 
+
+Split code into 3 parts:
+
+Model : saves and manages the data 
+View : take the data and displays it on the page 
+Controller: runs some code when we interact with the page 
+
+MVC : makes sure the page always matches the data 
