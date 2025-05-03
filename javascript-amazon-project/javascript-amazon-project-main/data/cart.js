@@ -10,7 +10,7 @@ if (!cart) {
     {
       productId: "15b6fc6f-327a-4ec4-896f-486349e85a3d",
       quantity: 1,
-      deliveryOptionId: "1",
+      deliveryOptionId: "2",
     },
   ];
 }
@@ -57,7 +57,7 @@ export function addToCart(productId) {
   // Loop through the cart.push below to find if the product is already added
   cart.forEach((cartItem) => {
     if (productId === cartItem.productId) {
-      // If we find a match, store it in matchingItem
+      // If we find a match, store it in matchingItem as an object
       matchingItem = cartItem;
     }
   });
@@ -88,5 +88,26 @@ export function removeFromCart(productId) {
   });
 
   cart = newCart;
+  saveToStorage();
+}
+
+/*
+- Loop through the cart and find the product 
+- Update the deliveryOptionId of the product 
+*/
+export function updateDeliveryOption(productId, deliveryOptionId) {
+  // We'll use this variable to check if the item already exists in the cart
+  let matchingItem;
+
+  // Loop through the cart.push below to find if the product is already added
+  cart.forEach((cartItem) => {
+    if (productId === cartItem.productId) {
+      // If we find a match, store it in matchingItem as an object
+      matchingItem = cartItem;
+    }
+  });
+
+  matchingItem.deliveryOptionId = deliveryOptionId;
+
   saveToStorage();
 }
