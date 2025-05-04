@@ -4,9 +4,9 @@ Repository : a folder where changes are being tracked
 
 ## Main Idea of JS
 
-1. Save the data
-2. Generate the HTML
-3. Make it interactive
+1. Save the data - Model
+2. Generate the HTML - View 
+3. Make it interactive - Controller 
 
 data - information ; information about our products
 
