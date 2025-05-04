@@ -13,6 +13,7 @@ import {
   deliveryOptions,
   getDeliveryOption,
 } from "../../data/deliveryOptions.js";
+import { renderPaymentSummary } from "./paymentSummary.js";
 
 hello();
 
@@ -21,6 +22,7 @@ hello();
 - Do calculations (Add 7days,...)
 - Display the date in easy-to-read format 
 */
+
 export function renderOrderSummary() {
   let cartSummaryHTML = "";
 
@@ -149,14 +151,15 @@ To delete :
   document.querySelectorAll(".js-delete-link").forEach((link) => {
     link.addEventListener("click", () => {
       const productId = link.dataset.productId;
+      // Updating the data
       removeFromCart(productId);
-      console.log(cart);
 
       const container = document.querySelector(
         `.js-cart-item-container-${productId}`
       );
       container.remove();
-      updateCartQuantity();
+
+      renderPaymentSummary();
     });
   });
 
@@ -166,6 +169,7 @@ To delete :
       const { productId, deliveryOptionId } = element.dataset;
       updateDeliveryOption(productId, deliveryOptionId);
       renderOrderSummary();
+      renderPaymentSummary();
     });
   });
 
