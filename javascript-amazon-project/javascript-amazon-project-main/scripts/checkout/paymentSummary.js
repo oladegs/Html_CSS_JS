@@ -1,4 +1,4 @@
-import { cart } from "../../data/cart.js";
+import { cart, calculateCartQuantity } from "../../data/cart.js";
 import { getProduct } from "../../data/products.js";
 import { getDeliveryOption } from "../../data/deliveryOptions.js";
 import { formatCurrency } from "../utils/money.js";
@@ -15,6 +15,7 @@ export function renderPaymentSummary() {
   //  Save the data - Model
   let productPriceCents = 0;
   let shippingPriceCents = 0;
+  let cartQuantitys = calculateCartQuantity();
 
   cart.forEach((cartItem) => {
     // we need productId >> get the full product details
@@ -35,7 +36,7 @@ export function renderPaymentSummary() {
           <div class="payment-summary-title">Order Summary</div>
 
           <div class="payment-summary-row">
-            <div>Items (3):</div>
+            <div>Items (${cartQuantitys}):</div>
             <div class="payment-summary-money">$${formatCurrency(
               productPriceCents
             )}</div>

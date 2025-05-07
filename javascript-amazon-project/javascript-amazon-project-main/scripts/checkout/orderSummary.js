@@ -154,11 +154,11 @@ To delete :
       // Updating the data
       removeFromCart(productId);
 
-      const container = document.querySelector(
-        `.js-cart-item-container-${productId}`
-      );
-      container.remove();
-
+      // const container = document.querySelector(
+      //   `.js-cart-item-container-${productId}`
+      // );
+      // container.remove();
+      renderOrderSummary();
       renderPaymentSummary();
     });
   });
