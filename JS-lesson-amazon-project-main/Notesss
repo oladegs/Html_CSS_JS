@@ -5,8 +5,8 @@ Repository : a folder where changes are being tracked
 ## Main Idea of JS
 
 1. Save the data - Model
-2. Generate the HTML - View 
-3. Make it interactive - Controller 
+2. Generate the HTML - View
+3. Make it interactive - Controller
 
 data - information ; information about our products
 
@@ -91,19 +91,25 @@ For you to pass inaccessible variables , you can create a function and pass the 
 
 - Attribute 'checked' selector makes a selector checked
 
-Recursion : A function can call / re-run itself 
+Recursion : A function can call / re-run itself
 
-Instead of using the dom and updating the html one by one 
-- Update the data 
-- Regenerate all the HTML 
+Instead of using the dom and updating the html one by one
+
+- Update the data
+- Regenerate all the HTML
 
 MVC :
-MODEL - VIEW - CONTROLLER 
+MODEL - VIEW - CONTROLLER
 
 Split code into 3 parts:
 
-Model : saves and manages the data 
-View : take the data and displays it on the page 
-Controller: runs some code when we interact with the page 
+Model : saves and manages the data
+View : take the data and displays it on the page
+Controller: runs some code when we interact with the page
 
-MVC : makes sure the page always matches the data 
+MVC : makes sure the page always matches the data
+
+Easiest way to test:
+
+- Open the website and try out the code (Manual testing) ; Cons - is hard to test every situation, is hard to retest the code
+- Using code to test code (Automated testing);
