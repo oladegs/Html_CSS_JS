@@ -113,3 +113,12 @@ Easiest way to test:
 
 - Open the website and try out the code (Manual testing) ; Cons - is hard to test every situation, is hard to retest the code
 - Using code to test code (Automated testing);
+
+Any situation you're testing is called a testcase
+
+2 types of Test Cases:
+
+1. Basic test cases ~ tests if the code is working
+2. Edge cases ~ test with values that are tricky
+
+Group of related tests ~ test suite
