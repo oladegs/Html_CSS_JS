@@ -122,3 +122,9 @@ Any situation you're testing is called a testcase
 2. Edge cases ~ test with values that are tricky
 
 Group of related tests ~ test suite
+
+Testing Framework like Jasmine test ::: external library that helps us write test easier ~
+
+1. Create test suite
+2. Create tests
+3. Compare values and display result
