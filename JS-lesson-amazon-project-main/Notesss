@@ -128,3 +128,19 @@ Testing Framework like Jasmine test ::: external library that helps us write tes
 1. Create test suite
 2. Create tests
 3. Compare values and display result
+
+## Testing
+
+- We can use describe inside describe
+- Best practice is to Test each condition of an if statement(Try to maximize test coverage)
+- Test Coverage ~ how much of the code is being tested ~ Try to maximize test coverage
+- Local storage is always a problem whilst testing
+
+Flaky test ~ test that sometimes passes and sometimes fails
+
+Mocks ~ lets us replace a method with a fake version
+In programming, mocking means you're pretending that a part of your program (like a database, file, or local storage) works a certain way, without using the real thing.
+
+spyOn() records every time a method is used
+
+A mock only lasts for 1 test

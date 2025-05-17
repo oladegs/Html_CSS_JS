@@ -1,0 +1,22 @@
+Javascript
+-----------
+Javascript Basics ;done
+Number and Math ;done
+Strings ;done
+HTML CSS reveiew, console.log ;done
+Variables ;done
+Booleans and if-statements ;done
+Functions ;done
+Objects ;done
+Document Object Model (DOM) ;done
+HTML, CSS and Javascript together  ;done
+Arrays and loops ;done
+Advanced functions ;done
+Start Amazon project and intro to git ;done
+Modules  ;done
+External libraries  ;done
+
+Testing 
+OOP 
+Intro to backend, callback , async await 
+Final Test
