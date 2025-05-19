@@ -144,3 +144,13 @@ In programming, mocking means you're pretending that a part of your program (lik
 spyOn() records every time a method is used
 
 A mock only lasts for 1 test
+
+Unit Tests ~ testing 1 piece of the code
+Integration Test ~ test many units/pieces of code working together
+
+When we testing a page:
+
+1. How the page looks
+2. How the page behaves
+
+Hooks ~ lets us run some code for each test
