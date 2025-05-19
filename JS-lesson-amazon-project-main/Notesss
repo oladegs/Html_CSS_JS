@@ -154,3 +154,9 @@ When we testing a page:
 2. How the page behaves
 
 Hooks ~ lets us run some code for each test
+
+Process:
+
+- Make changes to code
+- Re-run the tests
+- Save to Git
