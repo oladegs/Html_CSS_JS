@@ -160,3 +160,5 @@ Process:
 - Make changes to code
 - Re-run the tests
 - Save to Git
+
+Be careful of localStorage in all the functions, rest the, w setItem

@@ -30,8 +30,10 @@ export function renderOrderSummary() {
     const dateString = calculateDeliveryDate(deliveryOption);
 
     cartSummaryHTML += `
-      <div class="cart-item-container
-        js-cart-item-container-${matchingProduct.id}">
+ <div class="cart-item-container js-cart-item-container js-cart-item-container-${
+   matchingProduct.id
+ }">
+
         <div class="delivery-date">
           Delivery date: ${dateString}
         </div>
@@ -44,10 +46,14 @@ export function renderOrderSummary() {
             <div class="product-name">
               ${matchingProduct.name}
             </div>
+
             <div class="product-price">
               $${formatCurrency(matchingProduct.priceCents)}
             </div>
-            <div class="product-quantity">
+
+            <div class="product-quantity js-product-quantity-${
+              matchingProduct.id
+            }">
 
             <span>
               Quantity: <span class="quantity-label js-quantity-label-${
@@ -69,9 +75,9 @@ export function renderOrderSummary() {
               Save
             </span>
 
-            <span class="delete-quantity-link link-primary js-delete-link" data-product-id="${
+            <span class="delete-quantity-link link-primary js-delete-link  js-delete-link-${
               matchingProduct.id
-            }">
+            }" data-product-id="${matchingProduct.id}">
               Delete
             </span>
             </div>
@@ -134,10 +140,12 @@ export function renderOrderSummary() {
   function updateCartQuantity() {
     const cartQuantity = calculateCartQuantity();
 
-    document.querySelector(
-      ".js-return-to-home-link"
-    ).innerHTML = `${cartQuantity} items`;
+    const returnLinkElement = document.querySelector(".js-return-to-home-link");
+    if (returnLinkElement) {
+      returnLinkElement.innerHTML = `${cartQuantity} items`;
+    }
   }
+
   updateCartQuantity();
 
   // Delete Button
