@@ -162,3 +162,5 @@ Process:
 - Save to Git
 
 Be careful of localStorage in all the functions, rest the, w setItem
+
+\*\*\*Create tests for these files : products.js / paymentSummary.js
