@@ -192,3 +192,7 @@ this : Gives us the object that contains the function we are trying to access , 
   - when we generate an object, it would run the constructor automatically , it is a great place to put our setup code,
   - Has to be named "constructor"
   - Should not return anything
+
+- Private property : it can only be accessed inside the class
+- A field is the same as a property
+- A class allows us to create private properties and methods especially for security reasons
