@@ -164,3 +164,16 @@ Process:
 Be careful of localStorage in all the functions, rest the, w setItem
 
 \*\*\*Create tests for these files : products.js / paymentSummary.js
+
+OOP - another style of programming, another way we write our code , organizing our code into objects
+
+Procedural Programming : Procedure - a set of step by step instructions (a function)
+
+this : Gives us the object that contains the function we are trying to access , it would always give us the outer object
+
+### Why we use OOP :::
+
+- tries to repr the real world
+- easy to create multiple objects
+
+## We use pascalCase Convention in OOP for things that generate objects - start every word with a capital
