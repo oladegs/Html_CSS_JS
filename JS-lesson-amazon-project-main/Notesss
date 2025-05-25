@@ -177,3 +177,18 @@ this : Gives us the object that contains the function we are trying to access , 
 - easy to create multiple objects
 
 ## We use pascalCase Convention in OOP for things that generate objects - start every word with a capital
+
+## Class
+
+- An even better way to generate objects in OOP, it is an object generator
+
+- Each object generated from the class is called an instance of the class
+
+- A class looks like the object that it generates
+
+- They have extra features for OOP like
+
+  - Constructor - lets us run setup code, it lets us put this setup code inside the class,
+  - when we generate an object, it would run the constructor automatically , it is a great place to put our setup code,
+  - Has to be named "constructor"
+  - Should not return anything
