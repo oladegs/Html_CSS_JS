@@ -210,3 +210,14 @@ this : Gives us the object that contains the function we are trying to access , 
 - .map() = transforms each item.
   It doesn’t change the original array.
   It builds a new array with the result of what you return inside the function.
+
+## Inheritance
+
+- Lets us reuse code between classes
+- We use inheritance when we have one class which is a more specific type of another class
+- After Inheritance , we can add properties and methods that are more specific
+- type: Discriminator Property
+- href : tells the computer what to do when we click the link
+- target=\_blank: tells the link to open in a new tab
+
+Polymorphism - use a method without knowing the class it belongs too; the class will determine what this method does ; is an alt of using if statement
