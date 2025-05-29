@@ -55,7 +55,13 @@ class Clothing extends Product {
   }
 }
 
+console.log(this);
+
 /*
+const date = new Date();
+console.log(date);
+console.log(date.toLocaleTimeString());
+
 const tshirt = new Clothing({
   id: "83d4ca15-0f35-48f5-b7a3-1ea210004f2e",
   image: "images/products/adults-plain-cotton-tshirt-2-pack-teal.jpg",
@@ -85,6 +91,26 @@ const product1 = new Product({
   keywords: ["socks", "sports", "apparel"],
 });
 console.log(product1);
+
+
+// const object2 = {
+//   a: 2,
+//   b: this.a,
+// };
+
+function logThis() {
+  console.log(this);
+}
+logThis();
+logThis.call("hello");
+
+this;
+const object3 = {
+  method: () => {
+    console.log(this);
+  },
+};
+object3.method();
 */
 
 export const products = [

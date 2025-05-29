@@ -169,7 +169,14 @@ OOP - another style of programming, another way we write our code , organizing o
 
 Procedural Programming : Procedure - a set of step by step instructions (a function)
 
-this : Gives us the object that contains the function we are trying to access , it would always give us the outer object
+this:
+
+- Gives us the object that contains the function we are trying to access , it would always give us the outer object
+
+- lets an object access its own properties
+- Inside a fn, we can change "this" to whatever we want
+- Arrow fns do not change the value of this
+- this will have the same value as outside the arrow fn
 
 ### Why we use OOP :::
 
@@ -221,3 +228,5 @@ this : Gives us the object that contains the function we are trying to access , 
 - target=\_blank: tells the link to open in a new tab
 
 Polymorphism - use a method without knowing the class it belongs too; the class will determine what this method does ; is an alt of using if statement
+
+Built-in classes - classes that are provided by the language
