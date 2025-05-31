@@ -178,6 +178,20 @@ this:
 - Arrow fns do not change the value of this
 - this will have the same value as outside the arrow fn
 
+- this "The object that is currently being used" or "The instance that called the method."
+
+- Whenever you see this, ask yourself:
+  “Which object is running this code right now?”
+  That’s what this refers to.
+
+student1 is an object.
+
+sayHello is a function (method) that belongs to student1.
+
+Dot notation (student1.sayHello()) is how we call that method on the object.
+
+Inside sayHello, this refers to the object (student1) that called it.
+
 ### Why we use OOP :::
 
 - tries to repr the real world
@@ -228,5 +242,29 @@ this:
 - target=\_blank: tells the link to open in a new tab
 
 Polymorphism - use a method without knowing the class it belongs too; the class will determine what this method does ; is an alt of using if statement
+🧬 Polymorphism (in simple English):
+Polymorphism means that different objects can do the same thing in their own way.
+
+Imagine you tell different animals to "make a sound":
+
+A dog will bark.
+
+A cat will meow.
+
+A cow will moo.
+
+Even though you gave the same instruction ("make a sound"), each animal does something different — based on what kind of animal it is.
+
+In programming, this means different classes (like Dog, Cat, Cow) can all have a method called makeSound(), and when you call that method, the right version will run depending on the object.
+
+You don’t have to worry about how each one does it — you just use the same method name, and each object responds in its own way.
+
+That’s polymorphism — one command, many behaviors.
+
+🔁 Method Overloading
+Method overloading is when a class has multiple methods with the same name but different parameters (different type, number, or order). This allows a method to perform similar operations in slightly different ways depending on the arguments passed. While common in languages like Java or C#, JavaScript does not support traditional method overloading — instead, developers often use optional parameters or check argument types manually inside one method.
+
+🔄 Method Overriding
+Method overriding occurs when a subclass (child class) provides its own version of a method that is already defined in its superclass (parent class). This allows the child class to change or extend the behavior of the inherited method. In JavaScript, you override a method by defining it in the subclass using the same name as in the parent. This is a key feature for customizing how objects behave when inherited.
 
 Built-in classes - classes that are provided by the language

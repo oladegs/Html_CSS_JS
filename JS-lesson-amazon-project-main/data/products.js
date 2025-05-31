@@ -55,9 +55,9 @@ class Clothing extends Product {
   }
 }
 
+/*
 console.log(this);
 
-/*
 const date = new Date();
 console.log(date);
 console.log(date.toLocaleTimeString());
