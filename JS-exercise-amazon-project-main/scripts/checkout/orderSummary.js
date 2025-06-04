@@ -1,10 +1,11 @@
-import {
-  cart,
-  removeFromCart,
-  updateDeliveryOption,
-  calculateCartQuantity,
-  updateQuantity,
-} from "../../data/cart.js";
+// import {
+//   cart,
+//   removeFromCart,
+//   updateDeliveryOption,
+//   calculateCartQuantity,
+//   updateQuantity,
+// } from "../../data/cart.js";
+import { cart } from "../../data/cart-class.js";
 import { products, getProduct } from "../../data/products.js";
 import { formatCurrency } from "../utils/money.js";
 import {
@@ -18,7 +19,7 @@ import { renderCheckoutHeader } from "./checkoutHeader.js";
 export function renderOrderSummary() {
   let cartSummaryHTML = "";
 
-  cart.forEach((cartItem) => {
+  cart.cartItems.forEach((cartItem) => {
     const productId = cartItem.productId;
 
     const matchingProduct = getProduct(productId);
@@ -144,7 +145,7 @@ export function renderOrderSummary() {
 
   // SF
   function updateCartQuantity() {
-    const cartQuantity = calculateCartQuantity();
+    const cartQuantity = cart.calculateCartQuantity();
 
     const returnLinkElement = document.querySelector(".js-return-to-home-link");
     if (returnLinkElement) {
@@ -158,7 +159,7 @@ export function renderOrderSummary() {
   document.querySelectorAll(".js-delete-link").forEach((link) => {
     link.addEventListener("click", () => {
       const productId = link.dataset.productId;
-      removeFromCart(productId);
+      cart.removeFromCart(productId);
 
       // const container = document.querySelector(
       //   `.js-cart-item-container-${productId}`
@@ -176,7 +177,7 @@ export function renderOrderSummary() {
   document.querySelectorAll(".js-delivery-option").forEach((element) => {
     element.addEventListener("click", () => {
       const { productId, deliveryOptionId } = element.dataset;
-      updateDeliveryOption(productId, deliveryOptionId);
+      cart.updateDeliveryOption(productId, deliveryOptionId);
       renderOrderSummary();
       renderPaymentSummary();
     });
@@ -229,7 +230,7 @@ export function renderOrderSummary() {
         alert("Quantity must be at least 0 and less than 1000");
         return;
       }
-      updateQuantity(productId, newQuantity);
+      cart.updateQuantity(productId, newQuantity);
 
       // We can delete the code below (from the original solution)
       // because instead of using the DOM to update the page directly

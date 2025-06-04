@@ -1,12 +1,12 @@
 export class Car {
-  brand;
-  model;
+  #brand;
+  #model;
   speed;
   isTrunkOpen;
 
   constructor(carDetails) {
-    this.brand = carDetails.brand;
-    this.model = carDetails.model;
+    this.#brand = carDetails.brand;
+    this.#model = carDetails.model;
     this.speed = 0; // initialize speed here
     this.isTrunkOpen = false; // initialize trunk state here
   }
@@ -45,7 +45,9 @@ export class Car {
     const trunkStatus = this.isTrunkOpen ? "open" : "closed";
 
     console.log(
-      `${this.brand} ${this.model}, Speed: ${this.speed} km/h, Trunk: ${trunkStatus}`
+      `${this.#brand} ${this.#model}, Speed: ${
+        this.speed
+      } km/h, Trunk: ${trunkStatus}`
     );
   }
 }

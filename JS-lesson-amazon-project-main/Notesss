@@ -241,7 +241,8 @@ Inside sayHello, this refers to the object (student1) that called it.
 - href : tells the computer what to do when we click the link
 - target=\_blank: tells the link to open in a new tab
 
-Polymorphism - use a method without knowing the class it belongs too; the class will determine what this method does ; is an alt of using if statement
+Polymorphism - use a method without knowing the class it belongs too; the class will determine what this method does ; is an alt of using if statement.
+
 🧬 Polymorphism (in simple English):
 Polymorphism means that different objects can do the same thing in their own way.
 
@@ -268,3 +269,5 @@ Method overloading is when a class has multiple methods with the same name but d
 Method overriding occurs when a subclass (child class) provides its own version of a method that is already defined in its superclass (parent class). This allows the child class to change or extend the behavior of the inherited method. In JavaScript, you override a method by defining it in the subclass using the same name as in the parent. This is a key feature for customizing how objects behave when inherited.
 
 Built-in classes - classes that are provided by the language
+
+Protected Class : It can be accessed inside a class and its child classes
