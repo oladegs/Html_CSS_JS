@@ -10,7 +10,7 @@ xhr.addEventListener("load", () => {
 // 🛠️ Step 3: Prepare the request
 // 📝 "GET" means we’re asking for information
 // 🌐 The URL is where we’re sending the request (the backend server address)
-xhr.open("GET", "https://supersimplebackend.dev ");
+xhr.open("GET", "https://supersimplebackend.dev");
 
 // 🚀 Step 4: Send the request through the internet to the backend server
 xhr.send(); // ✈️ This sends out the message we created
