@@ -133,3 +133,40 @@ Output :
 🧭 In simple terms: Typing a URL + hitting enter = making a GET request.
 
 - Depending on the type of response, the browser can respond in a more useful way
+
+- In JS, fns are values aand we can use it as a parameter
+
+🧠 What is a Callback Function?
+A callback function is a function that you pass as an argument to another function, and it's called later — usually after something happens (like data loading, a button click, etc.).
+
+It’s called “callback” because the code you’re giving it will be called back when the time is right.
+
+🔍 What is an Anonymous Function?
+An anonymous function is a function that:
+✅ Has no name
+✅ Is often used as a callback
+✅ Is written directly where it's needed, instead of defining it somewhere else
+
+🔄 Anonymous function as a callback:
+setTimeout(function() {
+console.log("Hello after 2 seconds");
+}, 2000);
+
+This is an anonymous function — no name is given.
+But you can't use it alone — it must be passed into something, like another function (setTimeout()).
+
+You passed an anonymous function to setTimeout.
+It runs after 2 seconds.
+No need to name the function — it’s used only once.
+
+🔼 Arrow function version (also anonymous):
+setTimeout(() => {
+console.log("Hello after 2 seconds");
+}, 2000);
+
+✅ This is an anonymous arrow function — still no name, just a shorter way to write it.
+
+🚀 Using a backend in our project:
+📤 We send a request to the server,
+⏳ use a callback to wait for the response,
+✅ and once the response arrives, we run the rest of our 🧠 logic/code.

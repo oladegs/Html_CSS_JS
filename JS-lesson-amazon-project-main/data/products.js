@@ -60,6 +60,12 @@ export let products = [];
 export function loadProducts(fun) {
   const xhr = new XMLHttpRequest();
 
+  /* When you call loadProducts, it sets up a request to get product data from a    server.
+     When the server responds, the JSON text is converted into real JavaScript objects.
+     Depending on the product type, it makes either Product or Clothing objects.
+     After everything is loaded and processed, it runs the function you gave it(Callback).
+     We use a callback to wait for a response
+  */
   xhr.addEventListener("load", () => {
     products = JSON.parse(xhr.response).map((productDetails) => {
       //.map creates a new array and whatever we return from this inner fn is going to go inside that new array
