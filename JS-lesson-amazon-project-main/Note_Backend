@@ -270,6 +270,26 @@ Feature	Callback	- Promise
 - Promises help keep our code flat and avoid nesting:
 allows us to pass a value, we can run multiple promises at the same time using Promise.all()
 
+- Problem with promises is that it creates a lot of extra code (new promises >> resolve >> .then) except we return the promise as a function 
+
 - Fetch also make a request to the backend using a promise and not a callback 
 
 - Fetch is a better way to use http request because it uses promises directly 
+
+
+🔄 async/await — A Better Way to Handle Asynchronous Code
+✅ Definition:
+✨ async/await is a cleaner and more readable way to work with asynchronous code.
+🪄 It's basically a shortcut for using Promises, without all the .then() and .catch() chaining.
+
+🧠 Think of it like this:
+Feature	             Description
+🧩 async	          Tells JavaScript: "This function will use await."
+⏳ await	           "Pause here until the Promise is done."
+✅ Cleaner Code	   Looks like regular synchronous code ✨
+📦 Result	          You can use the result as if it’s already there
+
+- We can only use await when we're inside an async function, we use async so we can make our code cleaner 
+- async await can only be used with promises , it doesnt do anything with a callback 
+
+- When working with async codes , best practise is to use async await over promises and callbacks because they are much cleaner
