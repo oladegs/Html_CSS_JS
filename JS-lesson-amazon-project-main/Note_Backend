@@ -269,3 +269,7 @@ Feature	Callback	- Promise
 
 - Promises help keep our code flat and avoid nesting:
 allows us to pass a value, we can run multiple promises at the same time using Promise.all()
+
+- Fetch also make a request to the backend using a promise and not a callback 
+
+- Fetch is a better way to use http request because it uses promises directly 

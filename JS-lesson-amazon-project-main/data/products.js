@@ -57,6 +57,48 @@ class Clothing extends Product {
 
 export let products = [];
 
+// function loadProductsFetch() {
+//   // 🌐 1. Use the built-in fetch() function to make a GET request to the URL
+//   // 🛠️    By default, fetch sends a GET request
+//   // ⏳    It immediately returns a Promise (because the response takes time)
+//   fetch("https://supersimplebackend.dev/products")
+//     // 📬 2. When the Promise resolves, we get a response object (not the actual data yet!)
+//     .then((response) => {
+//       // 🔍 3. response.json() is a method on the response object
+//       // 🧾    It reads the body of the response and parses it as JSON
+//       // ⏳    It also returns a new Promise — because parsing might take time too
+//       return response.json(); // 🧠 At this point, still waiting for the real data
+//     })
+// // ✅ 4. When the .json() Promise resolves, we finally get the product data (as a JS object/array)
+//   .then((productsData) => {
+//     // 📦 5. Now we can work with the actual product data from the backend
+//     // 🔧    Thanks to response.json(), the raw JSON was turned into usable JS using JSON.parse()
+//     console.log(productsData); // 🖨️ Output the product list to the console
+//   });
+// }
+
+function loadProductsFetch() {
+  const promise = fetch("https://supersimplebackend.dev/products")
+    .then((response) => {
+      return response.json();
+    })
+    .then((productsData) => {
+      products = productsData.map((productDetails) => {
+        //.map creates a new array and whatever we return from this inner fn is going to go inside that new array
+        if (productDetails.type === "clothing") {
+          return new Clothing(productDetails);
+        }
+        return new Product(productDetails);
+      });
+      console.log("load products");
+    });
+  return promise;
+}
+
+loadProductsFetch().then(() => {
+  console.log("next step");
+});
+
 export function loadProducts(fun) {
   const xhr = new XMLHttpRequest();
 
