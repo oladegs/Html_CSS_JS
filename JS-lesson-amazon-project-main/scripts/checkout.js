@@ -7,17 +7,30 @@ import { loadCart } from "../data/cart.js";
 
 // async : makes a fn return a promise and this feature allows us to use await
 async function loadPage() {
-  await loadProductsFetch();
+  //Codes that could cause error are what we put in try block - the ones makng req to backend
+  try {
+    // manually creating errors
+    //throw "error1";
 
-  const value = await new Promise((resolve) => {
-    loadCart(() => {
-      resolve("value3");
+    await loadProductsFetch();
+
+    const value = await new Promise((resolve, reject) => {
+      // if we await a promise , instead of going into .catch, is going to go into catch
+      // throw "error2";
+      // throw doesnt work in the future () => {}, we get another parameter , reject and is a fn
+      loadCart(() => {
+        //reject("error3");
+        resolve("value3");
+      });
     });
-  });
+  } catch (error) {
+    console.log("unexpected errorsz. Please try again later");
+  }
 
   renderOrderSummary();
   renderPaymentSummary();
 }
+
 loadPage();
 
 /*
