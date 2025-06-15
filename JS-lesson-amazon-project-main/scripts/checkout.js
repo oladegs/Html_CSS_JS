@@ -5,28 +5,37 @@ import { loadCart } from "../data/cart.js";
 //import "../data/cart-class.js";
 //import "../data/backend-practice.js";
 
-// async : makes a fn return a promise and this feature allows us to use await
+// ⚙️ async: Marks this function as asynchronous and makes it return a Promise.
+// 💡 This also allows us to use `await` inside the function.
 async function loadPage() {
-  //Codes that could cause error are what we put in try block - the ones makng req to backend
+  // 🛑 try block: Place any code here that might fail — usually network requests.
   try {
-    // manually creating errors
-    //throw "error1";
+    // ⚠️ Manual error example (disabled):
+    // throw "error1";
 
+    // ⏳ Await the result of the product fetch request.
     await loadProductsFetch();
 
+    // 🧪 Simulating a custom async operation using a manually created Promise.
     const value = await new Promise((resolve, reject) => {
-      // if we await a promise , instead of going into .catch, is going to go into catch
-      // throw "error2";
-      // throw doesnt work in the future () => {}, we get another parameter , reject and is a fn
+      // ❌ If an error occurs *inside* this future function, it won’t trigger `catch` unless you call `reject()`.
+      // throw "error2"; // ❌ This won't work properly inside future async logic.
+
+      // 🧵 In asynchronous code like this, use `reject("error")` to signal failure.
       loadCart(() => {
-        //reject("error3");
+        // ❌ Simulate a cart load error:
+        // reject("error3");
+
+        // ✅ If successful, call resolve to continue.
         resolve("value3");
       });
     });
   } catch (error) {
-    console.log("unexpected errorsz. Please try again later");
+    // 🚨 If any awaited operation fails and `reject()` is called, it lands here.
+    console.log("❗Unexpected error. Please try again later.");
   }
 
+  // 🧾 Render the final UI summaries after all data is ready
   renderOrderSummary();
   renderPaymentSummary();
 }
