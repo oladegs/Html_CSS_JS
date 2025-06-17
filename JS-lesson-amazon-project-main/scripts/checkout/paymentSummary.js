@@ -93,7 +93,6 @@ export function renderPaymentSummary() {
       /* It lets us control the URL at the top of the browser, special object provided by JS - window.location();
       order.html is a fie path 
       */
-
       window.location.href = "orders.html";
     });
 }
