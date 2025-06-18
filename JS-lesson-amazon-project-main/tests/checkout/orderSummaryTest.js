@@ -11,6 +11,7 @@ describe("test suite: renderOrderSummary", () => {
       done();
     });
   });
+
   // Before each test, this chunk of code runs first
   // Jasmine has a feature called - done function : waiting for some code to finish, lets us control when to go to the next step
 

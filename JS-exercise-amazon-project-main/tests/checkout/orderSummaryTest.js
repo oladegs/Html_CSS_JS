@@ -8,6 +8,13 @@ describe("test suite: renderOrderSummary", () => {
   const productId2 = "15b6fc6f-327a-4ec4-896f-486349e85a3d";
   const three = "3";
 
+  // We only need to load the product once for all of our test
+  // beforeAll((done) => {
+  //   loadProductsFetch().then(() => {
+  //     done();
+  //   });
+  // });
+
   beforeEach(() => {
     spyOn(localStorage, "setItem");
 

@@ -414,3 +414,22 @@ Symbol	Part	Meaning
 
 URL parameters = search parameters like YT search
 URL parameters lets us save different data in each URL 
+
+CORS- Cross Origin Resource Sharing
+🌐 CORS — Cross-Origin Resource Sharing
+🔒 By default:
+A webpage (from 🔵 origin A) can’t fetch data from a 🔴 different origin B (different domain, port, or protocol).
+
+⚠️ Example:
+// Your site:
+https://your-frontend.com   🔵
+
+// API:
+https://api-server.com      🔴
+If 🔵 tries to fetch() from 🔴, the browser blocks it ❌ unless 🔴 explicitly says:
+Access-Control-Allow-Origin: https://your-frontend.com
+✅ That’s CORS — the server (🔴) must grant permission.
+✅ Use Case:
+Frontend (React/Vue/etc.) → Backend API
+CORS lets the server safely allow cross-origin requests
+
