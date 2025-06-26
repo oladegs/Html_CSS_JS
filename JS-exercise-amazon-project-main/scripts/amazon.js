@@ -73,6 +73,7 @@ function renderProductsGrid() {
     console.log(cart);
   }
   updateCartQuantity();
+
   // We're going to use an object to save the timeout ids.
   // The reason we use an object is because each product
   // will have its own timeoutId. So an object lets us

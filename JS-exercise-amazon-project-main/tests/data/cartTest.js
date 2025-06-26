@@ -7,8 +7,14 @@
 // } from "../../data/cart-class.js";
 
 import { cart } from "../../data/cart-class.js";
+import { loadProductsFetch } from "../../data/products.js";
 
 describe("test suite: addToCart", () => {
+  // We only need to load the product once for all of our test
+  beforeAll(async () => {
+    await loadProductsFetch();
+  });
+
   // BeforeEach each test, this chunk of code runs first
   beforeEach(() => {
     spyOn(localStorage, "setItem");

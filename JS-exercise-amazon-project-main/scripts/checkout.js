@@ -24,7 +24,6 @@ async function loadPage() {
   renderOrderSummary();
   renderPaymentSummary();
 }
-
 loadPage();
 
 /*

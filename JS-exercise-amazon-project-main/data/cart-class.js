@@ -44,7 +44,6 @@ export class Cart {
     return cartQuantity;
   }
 
-  // Add To Cart - addToCart: function(productId) {}
   addToCart(productId, quantity) {
     let matchingItem;
 

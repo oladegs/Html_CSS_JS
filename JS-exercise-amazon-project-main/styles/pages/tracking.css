@@ -79,3 +79,18 @@
   border-radius: 50px;
   width: 50%;
 }
+
+.preparing {
+  background-color: #fdd835; /* Amber */
+  width: 50%;
+}
+
+.shipped {
+  background-color: #42a5f5; /* Light Blue */
+  width: 99%;
+}
+
+.delivered {
+  background-color: #66bb6a; /* Green */
+  width: 100%;
+}

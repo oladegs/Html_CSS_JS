@@ -1,7 +1,17 @@
-import { Product, Clothing, Appliance } from "../../data/products.js";
+import {
+  Product,
+  Clothing,
+  Appliance,
+  loadProductsFetch,
+} from "../../data/products.js";
 
 describe("test suite: Product Class", () => {
   let product;
+
+  // We only need to load the product once for all of our test
+  beforeAll(async () => {
+    await loadProductsFetch();
+  });
 
   beforeEach(() => {
     product = new Product({

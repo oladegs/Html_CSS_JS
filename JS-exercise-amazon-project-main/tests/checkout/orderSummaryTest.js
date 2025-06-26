@@ -1,6 +1,7 @@
 import { renderOrderSummary } from "../../scripts/checkout/orderSummary.js";
 //import { cart, loadFromStorage } from "../../data/cart.js";
 import { cart } from "../../data/cart-class.js";
+import { loadProducts, loadProductsFetch } from "../../data/products.js";
 
 describe("test suite: renderOrderSummary", () => {
   // Before each test, this chunk of code runs first
@@ -9,11 +10,9 @@ describe("test suite: renderOrderSummary", () => {
   const three = "3";
 
   // We only need to load the product once for all of our test
-  // beforeAll((done) => {
-  //   loadProductsFetch().then(() => {
-  //     done();
-  //   });
-  // });
+  beforeAll(async () => {
+    await loadProductsFetch();
+  });
 
   beforeEach(() => {
     spyOn(localStorage, "setItem");
