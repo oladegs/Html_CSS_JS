@@ -389,6 +389,7 @@ Place your order button - is going to turn the cart into an order
 ✅ Response handled in frontend (rendered or logged)
 
 🌐 Tracking Page with URL Parameters (Explained with Symbols)
+
 🧭 Goal: We want each tracking page to be different depending on the order and the product — so we know which product to show or track.
 
 💡 Solution: Use URL Parameters
@@ -414,7 +415,7 @@ Symbol	Part	Meaning
 
 URL parameters = search parameters like YT search
 URL parameters lets us save different data in each URL 
-
+--------------------------------------------------------
 CORS- Cross Origin Resource Sharing
 🌐 CORS — Cross-Origin Resource Sharing
 🔒 By default:

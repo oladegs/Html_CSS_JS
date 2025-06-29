@@ -80,17 +80,12 @@
   width: 50%;
 }
 
-.preparing {
-  background-color: #fdd835; /* Amber */
-  width: 50%;
-}
-
-.shipped {
-  background-color: #42a5f5; /* Light Blue */
-  width: 99%;
-}
-
-.delivered {
-  background-color: #66bb6a; /* Green */
-  width: 100%;
+/* Highlighted current status */
+.current-status {
+  color: #ffffff;
+  font-weight: bold;
+  background-color: #42a5f5; /* Light blue */
+  border-radius: 20px;
+  padding: 4px 8px;
+  transition: background-color 0.3s ease;
 }
