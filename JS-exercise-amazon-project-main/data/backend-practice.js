@@ -14,3 +14,5 @@ xhr.open("GET", "https://supersimplebackend.dev");
 
 // 🚀 Step 4: Send the request through the internet to the backend server
 xhr.send(); // ✈️ This sends out the message we created
+
+// Ya rabb , help me
