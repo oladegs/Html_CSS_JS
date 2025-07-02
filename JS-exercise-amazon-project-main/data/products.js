@@ -20,6 +20,7 @@ export class Product {
   name;
   rating;
   priceCents;
+  keywords;
 
   // Converting an object into a class and then copy over the properties to "this" class because classes have extra features like adding methods , and make properties / methods private
   constructor(productDetails) {
@@ -28,6 +29,7 @@ export class Product {
     this.name = productDetails.name;
     this.rating = productDetails.rating;
     this.priceCents = productDetails.priceCents;
+    this.keywords = productDetails.keywords;
   }
 
   getStarsUrl() {

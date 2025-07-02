@@ -75,32 +75,40 @@ export function renderPaymentSummary() {
 
   document.querySelector(".js-payment-summary").innerHTML = paymentSummaryHTML;
 
-  document
-    .querySelector(".js-place-order")
-    .addEventListener("click", async () => {
-      try {
-        // When we click this button, make a req to the backend to create the order
-        const response = await fetch("https://supersimplebackend.dev/orders", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            cart: cart.cartItems,
-          }),
-        });
+  const placeOrderButton = document.querySelector(".js-place-order");
 
-        const order = await response.json();
+  placeOrderButton.addEventListener("click", async () => {
+    // ✅ Prevent click if cart is empty
+    if (!cart.cartItems || cart.cartItems.length === 0) {
+      console.log("❗Cart is empty. Cannot place order.");
+      return;
+    }
 
-        addOrder(order);
-      } catch (error) {
-        // Incase any network request error, this works
-        console.log("❗Unexpected error. Try again later.");
-      }
+    try {
+      // When we click this button, make a req to the backend to create the order
+      const response = await fetch("https://supersimplebackend.dev/orders", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          cart: cart.cartItems,
+        }),
+      });
 
-      /* It lets us control the URL at the top of the browser, special object provided by JS - window.location();
-        order.html is a fie path 
-        */
-      window.location.href = "orders.html";
-    });
+      const order = await response.json();
+
+      addOrder(order);
+    } catch (error) {
+      // Incase any network request error, this works
+      console.log("❗Unexpected error. Try again later.");
+    }
+
+    /* It lets us control the URL at the top of the browser, special object provided by JS - window.location();
+     order.html is a fie path 
+  */
+    // Extra feature: make the cart empty after creating an order.
+    cart.resetCart();
+    window.location.href = "orders.html";
+  });
 }

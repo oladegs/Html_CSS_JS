@@ -118,6 +118,12 @@ export class Cart {
 
     this.saveToStorage();
   }
+
+  // Extra feature: make the cart empty after creating an order.
+  resetCart() {
+    this.cartItems = [];
+    this.saveToStorage();
+  }
 }
 export const cart = new Cart("cart-oop");
 const businessCart = new Cart("cart-business");

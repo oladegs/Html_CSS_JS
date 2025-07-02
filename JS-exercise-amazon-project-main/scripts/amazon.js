@@ -18,7 +18,12 @@ function renderProductsGrid() {
   // filter the products that match the search.
   if (search) {
     filteredProducts = products.filter((product) => {
-      return product.name.includes(search);
+      return (
+        product.name.toLowerCase().includes(search.toLowerCase()) ||
+        product.keywords.some((keyword) =>
+          keyword.toLowerCase().includes(search.toLowerCase())
+        )
+      );
     });
   }
 
