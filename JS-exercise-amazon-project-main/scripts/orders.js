@@ -40,6 +40,12 @@ async function loadPage() {
   function productsListHTML(order) {
     let productsListHTML = "";
 
+    // ✅ ADDED: Check if products is a valid array
+    if (!Array.isArray(order.products)) {
+      console.warn("order.products is not an array:", order);
+      return "<div>No products found in this order.</div>";
+    }
+
     order.products.forEach((productDetails) => {
       const product = getProduct(productDetails.productId);
 
@@ -102,3 +108,13 @@ async function loadPage() {
 }
 
 loadPage();
+
+const video = fetch("https://supersimple.dev/video");
+
+const videoHTML = `
+<div class = 'video'>
+<img class="video-image" src="video.image">
+<div class="title">${video.title}</div>
+
+</div>
+`;
